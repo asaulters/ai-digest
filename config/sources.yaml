@@ -39,6 +39,86 @@ rss_feeds:
     url: "https://towardsdatascience.com/feed"
     category: "ai"
 
+  - name: "Superhuman Blog"
+    url: "https://superhuman.com/blog/rss"
+    category: "ai"
+
+  - name: "Notion Blog"
+    url: "https://www.notion.so/blog/rss.xml"
+    category: "ai"
+
+  - name: "Linear Blog"
+    url: "https://linear.app/blog/rss"
+    category: "ai"
+
+  - name: "Aha! Blog"
+    url: "https://www.aha.io/blog/rss"
+    category: "pm"
+
+  - name: "ProductPlan Blog"
+    url: "https://www.productplan.com/blog/feed/"
+    category: "pm"
+
+  - name: "Atlassian Blog"
+    url: "https://www.atlassian.com/blog/rss"
+    category: "pm"
+
+  - name: "Asana Blog"
+    url: "https://blog.asana.com/feed/"
+    category: "pm"
+
+  - name: "Monday.com Blog"
+    url: "https://monday.com/blog/feed/"
+    category: "pm"
+
+  - name: "Ben's Bites"
+    url: "https://bensbites.beehiiv.com/feed"
+    category: "ai"
+
+  - name: "TLDR AI"
+    url: "https://tldr.tech/ai/rss"
+    category: "ai"
+
+  - name: "The Rundown AI"
+    url: "https://www.therundown.ai/rss"
+    category: "ai"
+
+  - name: "AI for Work"
+    url: "https://aiforwork.substack.com/feed"
+    category: "ai"
+
+  - name: "Wes Kao's Newsletter"
+    url: "https://newsletter.weskao.com/feed"
+    category: "pm"
+
+  - name: "Product Talk"
+    url: "https://www.producttalk.org/feed/"
+    category: "pm"
+
+  - name: "Intercom Blog"
+    url: "https://www.intercom.com/blog/feed"
+    category: "ai"
+
+  - name: "Mind the Product"
+    url: "https://www.mindtheproduct.com/feed/"
+    category: "pm"
+
+  - name: "Productboard Blog"
+    url: "https://www.productboard.com/blog/feed/"
+    category: "pm"
+
+  - name: "Amplitude Blog"
+    url: "https://amplitude.com/blog/feed"
+    category: "pm"
+
+  - name: "Reforge Blog"
+    url: "https://www.reforge.com/blog/rss"
+    category: "pm"
+
+  - name: "Superhuman AI Newsletter"
+    url: "https://www.superhuman.ai/rss"
+    category: "ai"  
+
 # Algolia HN API searches (fetched via httpx, not feedparser)
 hacker_news_algolia:
   enabled: true
@@ -48,5 +128,20 @@ hacker_news_algolia:
     - "AI product manager"
     - "agentic workflow"
     - "AI tools"
+    - "LLM workflow"
+    - "AI roadmap"
+    - "AI tools for teams"
+    - "Claude Code productivity"
+    - "AI sprint planning"
+    - "copilot for PM"
+    - "AI automation workflow"
+    - "AI product management"
+    - "prompt engineering workflow"
+    - "AI assistant productivity"
+    - "LLM agent"
+    - "AI task management"
+    - "product management tools"
+    - "AI knowledge management"
+    - "show HN AI productivity"
   min_points: 30
-  lookback_hours: 48
+  lookback_hours: 72
