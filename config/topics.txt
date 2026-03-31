@@ -1,0 +1,25 @@
+Applied AI in project management
+AI tools for project managers and product managers
+LLM-powered productivity tools for teams
+AI-assisted sprint planning and backlog grooming
+Machine learning for software delivery and forecasting
+Generative AI in product development workflows
+AI agents for task tracking and team coordination
+Large language models for documentation and requirements
+AI-powered roadmapping and prioritization tools
+Agile methodology and scrum best practices
+Product management frameworks and strategies
+AI tools for engineering teams and developers
+LLM releases and capabilities relevant to workplace productivity
+Prompt engineering for project and product work
+AI automation of repetitive project management tasks
+Natural language interfaces for project tracking tools
+Conversational AI assistants for team collaboration
+AI summarization of meeting notes and standups
+Intelligent project risk detection and mitigation
+AI-enhanced retrospectives and process improvement
+OpenAI GPT product features for enterprise
+Anthropic Claude enterprise use cases
+Agentic AI workflows for knowledge workers
+AI writing assistants for product specifications
+Vector databases and semantic search for internal tools

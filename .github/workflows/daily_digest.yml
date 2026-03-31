@@ -1,0 +1,129 @@
+name: Daily AI PM Digest
+
+on:
+  schedule:
+    # 7:00 AM UTC daily
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no email, no commit)"
+        required: false
+        default: "false"
+        type: choice
+        options: ["true", "false"]
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # sentence-transformers downloads the model to ~/.cache/huggingface on first run.
+      # Cache it so subsequent runs are faster (~350 MB, saves 30–60 seconds).
+      - name: Cache sentence-transformers model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface/hub
+          key: sentence-transformers-all-MiniLM-L6-v2-v1
+          restore-keys: |
+            sentence-transformers-all-MiniLM-L6-v2-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Pre-download model (ensures cache is populated)
+        run: |
+          python -c "
+          from sentence_transformers import SentenceTransformer
+          SentenceTransformer('all-MiniLM-L6-v2')
+          print('Model ready.')
+          "
+
+      - name: Run digest pipeline
+        id: run_pipeline
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          DRY_RUN_FLAG=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            DRY_RUN_FLAG="--dry-run"
+          fi
+          python scripts/run_pipeline.py $DRY_RUN_FLAG
+
+      - name: Commit updated database and dashboard
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/digest.db dashboard/index.html data/digest.log || true
+          git diff --cached --quiet || git commit -m "chore: digest update $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
+
+      - name: Send error notification on failure
+        if: failure()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          python - <<'EOF'
+          import sys, os
+          sys.path.insert(0, 'scripts')
+          from deliver import send_error_email
+          send_error_email("GitHub Actions workflow failed. Check the Actions log for details.")
+          EOF
+
+  # Deploys dashboard/index.html to GitHub Pages after a successful digest run.
+  pages:
+    runs-on: ubuntu-latest
+    needs: digest
+    if: ${{ github.event.inputs.dry_run != 'true' }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Pull the latest commit, which includes the dashboard committed above
+          ref: main
+          fetch-depth: 1
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dashboard/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

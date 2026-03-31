@@ -1,0 +1,52 @@
+rss_feeds:
+  - name: "The Pragmatic Engineer"
+    url: "https://newsletter.pragmaticengineer.com/feed"
+    category: "engineering"
+
+  - name: "Simon Willison's Weblog"
+    url: "https://simonwillison.net/atom/everything/"
+    category: "ai"
+
+  - name: "LangChain Blog"
+    url: "https://blog.langchain.dev/rss/"
+    category: "ai_tools"
+
+  - name: "OpenAI Blog"
+    url: "https://openai.com/blog/rss.xml"
+    category: "ai"
+
+  - name: "Anthropic News"
+    url: "https://www.anthropic.com/rss.xml"
+    category: "ai"
+
+  - name: "Lenny's Newsletter"
+    url: "https://www.lennysnewsletter.com/feed"
+    category: "product"
+
+  - name: "AI Snake Oil"
+    url: "https://aisnakeoil.substack.com/feed"
+    category: "ai"
+
+  - name: "Chain of Thought (every.to)"
+    url: "https://every.to/chain-of-thought/feed"
+    category: "ai"
+
+  - name: "MIT Technology Review - AI"
+    url: "https://www.technologyreview.com/feed/"
+    category: "ai"
+
+  - name: "Towards Data Science"
+    url: "https://towardsdatascience.com/feed"
+    category: "ai"
+
+# Algolia HN API searches (fetched via httpx, not feedparser)
+hacker_news_algolia:
+  enabled: true
+  keywords:
+    - "AI project management"
+    - "LLM productivity"
+    - "AI product manager"
+    - "agentic workflow"
+    - "AI tools"
+  min_points: 30
+  lookback_hours: 48

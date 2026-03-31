@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI PM Daily Digest</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5; color: #222; line-height: 1.5; }
+    header { background: #1a1a2e; color: #fff; padding: 24px 32px; }
+    header h1 { font-size: 1.6rem; font-weight: 700; }
+    header .meta { font-size: 0.85rem; color: #aaa; margin-top: 4px; }
+    .stats { display: flex; gap: 24px; margin-top: 12px; }
+    .stat { background: rgba(255,255,255,0.1); border-radius: 6px; padding: 8px 16px; }
+    .stat-num { font-size: 1.4rem; font-weight: 700; }
+    .stat-label { font-size: 0.75rem; color: #ccc; }
+    .controls { padding: 16px 32px; background: #fff; border-bottom: 1px solid #ddd;
+                 display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .controls label { font-size: 0.85rem; color: #666; }
+    .controls input[type=range] { width: 160px; }
+    #threshold-val { font-weight: bold; color: #1a1a2e; }
+    main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+    .card { background: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px;
+             box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: box-shadow 0.15s; }
+    .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.12); }
+    .card-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+                  font-size: 0.78rem; color: #888; margin-bottom: 6px; }
+    .source { background: #e8f4fd; color: #1565c0; padding: 2px 8px; border-radius: 12px;
+               font-weight: 500; }
+    .pubdate { color: #aaa; }
+    .score-bar { margin-left: auto; }
+    .badge.included { background: #e8f5e9; color: #2e7d32; padding: 2px 8px;
+                        border-radius: 12px; font-weight: 500; }
+    .card-title a { color: #1a1a2e; text-decoration: none; font-size: 1.05rem;
+                      font-weight: 600; line-height: 1.35; }
+    .card-title a:hover { color: #1565c0; text-decoration: underline; }
+    .summary { color: #555; font-size: 0.875rem; margin-top: 6px; }
+    .hidden { display: none !important; }
+    footer { text-align: center; padding: 32px; font-size: 0.8rem; color: #aaa; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AI PM Daily Digest</h1>
+    <div class="meta">Updated March 31, 2026 at 10:04 UTC</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">23</div>
+        <div class="stat-label">Articles</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5</div>
+        <div class="stat-label">In email digest</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <label>
+      Min relevance:
+      <input type="range" id="threshold" min="0" max="100" value="0"
+             oninput="filterCards(this.value)">
+      <span id="threshold-val">0%</span>
+    </label>
+  </div>
+
+  <main id="articles">
+    
+    <article class="card" data-score="0.0634">
+      <div class="card-meta">
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:6px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="6% relevance"></span> 6%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://simonwillison.net/2026/Mar/30/datasette-files/#atom-everything" target="_blank" rel="noopener">datasette-files 0.1a3</a>
+      </h3>
+      <p class="summary">Release: datasette-files 0.1a3 I'm working on integrating datasette-files into other plugins, such as datasette-extract . This necessitated a new release of the base plugin. owners_can_edit and owners_can_delete configuration options, plus the files-edit and files-delete actions are now scoped to a …</p>
+    </article>
+
+    <article class="card" data-score="0.068">
+      <div class="card-meta">
+        <span class="source">MIT Technology Review - AI</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:6px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="6% relevance"></span> 6%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.technologyreview.com/2026/03/30/1134836/the-download-brainless-human-clones-first-uterus-kept-alive-outside-body/" target="_blank" rel="noopener">The Download: brainless human clones and the first uterus kept alive outside a body</a>
+      </h3>
+      <p class="summary">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Inside the stealthy startup that pitched brainless human clones&#160; After&#160;operating&#160;in secrecy for years, R3 Bio, a California-based start…</p>
+    </article>
+
+    <article class="card" data-score="0.0901">
+      <div class="card-meta">
+        <span class="source">MIT Technology Review - AI</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:9px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="9% relevance"></span> 9%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.technologyreview.com/2026/03/30/1134780/r3-bio-brainless-human-clones-full-body-replacement-john-schloendorn-aging-longevity/" target="_blank" rel="noopener">Inside the stealthy startup that pitched brainless human clones</a>
+      </h3>
+      <p class="summary">After operating in secrecy for years, a startup company called R3 Bio, in Richmond, California, suddenly shared details about its work last week—saying it had raised money to create nonsentient monkey “organ sacks” as an alternative to animal testing. In an interview with Wired, R3 listed three inve…</p>
+    </article>
+
+    <article class="card" data-score="0.1022">
+      <div class="card-meta">
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Mar 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:10px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="10% relevance"></span> 10%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://simonwillison.net/2026/Mar/29/pretext/#atom-everything" target="_blank" rel="noopener">Pretext</a>
+      </h3>
+      <p class="summary">Pretext Exciting new browser library from Cheng Lou, previously a React core developer and the original creator of the react-motion animation library. Pretext solves the problem of calculating the height of a paragraph of line-wrapped text without touching the DOM . The usual way of doing this is to…</p>
+    </article>
+
+    <article class="card" data-score="0.134">
+      <div class="card-meta">
+        <span class="source">Towards Data Science</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:13px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="13% relevance"></span> 13%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://towardsdatascience.com/why-data-scientists-should-care-about-quantum-computing/" target="_blank" rel="noopener">Why Data Scientists Should Care About Quantum Computing</a>
+      </h3>
+      <p class="summary">Sara A. Metwalli on the rise of a promising new technology, the effects of LLM on her work, and more. The post Why Data Scientists Should Care About Quantum Computing appeared first on Towards Data Science .</p>
+    </article>
+
+    <article class="card" data-score="0.1573">
+      <div class="card-meta">
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:15px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="15% relevance"></span> 15%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://simonwillison.net/2026/Mar/30/datasette-llm/#atom-everything" target="_blank" rel="noopener">datasette-llm 0.1a3</a>
+      </h3>
+      <p class="summary">Release: datasette-llm 0.1a3 Adds the ability to configure which LLMs are available for which purpose , which means you can restrict the list of models that can be used with a specific plugin. #3 Tags: llm , datasette</p>
+    </article>
+
+    <article class="card" data-score="0.1844">
+      <div class="card-meta">
+        <span class="source">Towards Data Science</span>
+        <span class="pubdate">Mar 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:18px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="18% relevance"></span> 18%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://towardsdatascience.com/self-healing-neural-networks-in-pytorch-fix-model-drift-in-real-time-without-retraining/" target="_blank" rel="noopener">Self-Healing Neural Networks in PyTorch: Fix Model Drift in Real Time Without Retraining</a>
+      </h3>
+      <p class="summary">What happens when your production model drifts and retraining isn’t an option? This article shows how a self-healing neural network detects drift, adapts in real time using a lightweight adapter, and recovers 27.8% accuracy—without retraining or downtime. The post Self-Healing Neural Networks in PyT…</p>
+    </article>
+
+    <article class="card" data-score="0.2155">
+      <div class="card-meta">
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Mar 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:21px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="21% relevance"></span> 21%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://simonwillison.net/2026/Mar/29/python-vulnerability-lookup/#atom-everything" target="_blank" rel="noopener">Python Vulnerability Lookup</a>
+      </h3>
+      <p class="summary">Tool: Python Vulnerability Lookup I learned that the OSV.dev open source vulnerability database has an open CORS JSON API , so I had Claude Code build this HTML tool for pasting in a pyproject.toml or requirements.txt file (or name of a GitHub repo containing those) and seeing a list of all reported…</p>
+    </article>
+
+    <article class="card" data-score="0.2243">
+      <div class="card-meta">
+        <span class="source">MIT Technology Review - AI</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:22px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="22% relevance"></span> 22%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.technologyreview.com/2026/03/30/1134881/the-pentagons-culture-war-tactic-against-anthropic-has-backfired/" target="_blank" rel="noopener">The Pentagon’s culture war tactic against Anthropic has backfired</a>
+      </h3>
+      <p class="summary">This story originally appeared in The Algorithm, our weekly newsletter on AI. To get stories like this in your inbox first, sign up here. Last Thursday, a California judge temporarily blocked the Pentagon from labeling Anthropic a supply chain risk and ordering government agencies to stop using its …</p>
+    </article>
+
+    <article class="card" data-score="0.2431">
+      <div class="card-meta">
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Mar 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:24px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="24% relevance"></span> 24%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://simonwillison.net/2026/Mar/29/pretext-explainer/#atom-everything" target="_blank" rel="noopener">Pretext — Under the Hood</a>
+      </h3>
+      <p class="summary">Tool: Pretext — Under the Hood See my notes on Pretext here .</p>
+    </article>
+
+    <article class="card" data-score="0.2459">
+      <div class="card-meta">
+        <span class="source">Towards Data Science</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:24px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="24% relevance"></span> 24%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://towardsdatascience.com/how-to-lie-with-statistics-with-your-robot-best-friend/" target="_blank" rel="noopener">How to Lie with Statistics with your Robot Best Friend</a>
+      </h3>
+      <p class="summary">What is p hacking, is it bad, and can you get ai to do it for you? The post How to Lie with Statistics with your Robot Best Friend appeared first on Towards Data Science .</p>
+    </article>
+
+    <article class="card" data-score="0.2575">
+      <div class="card-meta">
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:25px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="25% relevance"></span> 25%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://simonwillison.net/2026/Mar/30/mr-chatterbox/#atom-everything" target="_blank" rel="noopener">Mr. Chatterbox is a (weak) Victorian-era ethically trained model you can run on your own computer</a>
+      </h3>
+      <p class="summary">Trip Venturella released Mr. Chatterbox , a language model trained entirely on out-of-copyright text from the British Library. Here's how he describes it: Mr. Chatterbox is a language model trained entirely from scratch on a corpus of over 28,000 Victorian-era British texts published between 1837 an…</p>
+    </article>
+
+    <article class="card" data-score="0.2894">
+      <div class="card-meta">
+        <span class="source">Towards Data Science</span>
+        <span class="pubdate">Mar 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:28px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="28% relevance"></span> 28%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://towardsdatascience.com/how-to-become-an-ai-engineer-fast-skills-projects-salary/" target="_blank" rel="noopener">How to Become an AI Engineer Fast (Skills, Projects, Salary)</a>
+      </h3>
+      <p class="summary">Spoiler, it will take longer than 3 months The post How to Become an AI Engineer Fast (Skills, Projects, Salary) appeared first on Towards Data Science .</p>
+    </article>
+
+    <article class="card" data-score="0.2961">
+      <div class="card-meta">
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:29px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="29% relevance"></span> 29%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://simonwillison.net/2026/Mar/30/llm-mrchatterbox-2/#atom-everything" target="_blank" rel="noopener">llm-mrchatterbox 0.1</a>
+      </h3>
+      <p class="summary">Release: llm-mrchatterbox 0.1 See Mr. Chatterbox is a (weak) Victorian-era ethically trained model you can run on your own computer . Tags: llm</p>
+    </article>
+
+    <article class="card" data-score="0.3159">
+      <div class="card-meta">
+        <span class="source">Lenny's Newsletter</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:31px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="31% relevance"></span> 31%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.lennysnewsletter.com/p/how-to-turn-claude-code-into-your" target="_blank" rel="noopener">How to turn Claude Code into your personal life operating system | Hilary Gridley</a>
+      </h3>
+      <p class="summary">Watch now | &#127897;&#65039; How a new mom and entrepreneur uses Claude Code to automate life admin&#8212;all without complex setup</p>
+    </article>
+
+    <article class="card" data-score="0.3205">
+      <div class="card-meta">
+        <span class="source">Lenny's Newsletter</span>
+        <span class="pubdate">Mar 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:32px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="32% relevance"></span> 32%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.lennysnewsletter.com/p/how-openclaw-changed-my-life-claire-vo" target="_blank" rel="noopener">From skeptic to true believer: How OpenClaw changed my life | Claire Vo</a>
+      </h3>
+      <p class="summary">Listen now | Claire Vo went from OpenClaw skeptic to running nine specialized AI agents across her family calendar, inbound sales, kids&#8217; homework help, and more</p>
+    </article>
+
+    <article class="card" data-score="0.3262">
+      <div class="card-meta">
+        <span class="source">Hacker News (AI tools)</span>
+        <span class="pubdate">Mar 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:32px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="32% relevance"></span> 32%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://github.com/austin-weeks/miasma" target="_blank" rel="noopener">Miasma: A tool to trap AI web scrapers in an endless poison pit</a>
+      </h3>
+      <p class="summary">HN discussion: Miasma: A tool to trap AI web scrapers in an endless poison pit. Points: 341, Comments: 243</p>
+    </article>
+
+    <article class="card" data-score="0.345">
+      <div class="card-meta">
+        <span class="source">Towards Data Science</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:34px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="34% relevance"></span> 34%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://towardsdatascience.com/explainable-ai-in-production-a-neuro-symbolic-model-for-real-time-fraud-detection/" target="_blank" rel="noopener">Explainable AI in Production: A Neuro-Symbolic Model for Real-Time Fraud Detection</a>
+      </h3>
+      <p class="summary">SHAP needs 30 ms to explain a fraud prediction. That explanation is stochastic, runs after the decision, and requires a background dataset you have to maintain at inference time. This article benchmarks a neuro-symbolic model that produces a deterministic, human-readable explanation in 0.9 ms — as a…</p>
+    </article>
+
+    <article class="card" data-score="0.3507">
+      <div class="card-meta">
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:35px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="35% relevance"></span> 35%</span>
+        <span class="badge included">In digest</span>
+      </div>
+      <h3 class="card-title">
+        <a href="https://simonwillison.net/2026/Mar/30/georgi-gerganov/#atom-everything" target="_blank" rel="noopener">Quoting Georgi Gerganov</a>
+      </h3>
+      <p class="summary">Note that the main issues that people currently unknowingly face with local models mostly revolve around the harness and some intricacies around model chat templates and prompt construction. Sometimes there are even pure inference bugs. From typing the task in the client to the actual result, there …</p>
+    </article>
+
+    <article class="card" data-score="0.4006">
+      <div class="card-meta">
+        <span class="source">MIT Technology Review - AI</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:40px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="40% relevance"></span> 40%</span>
+        <span class="badge included">In digest</span>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.technologyreview.com/2026/03/30/1134795/there-are-more-ai-health-tools-than-ever-but-how-well-do-they-work/" target="_blank" rel="noopener">There are more AI health tools than ever—but how well do they work?</a>
+      </h3>
+      <p class="summary">Earlier this month, Microsoft launched Copilot Health, a new space within its Copilot app where users will be able to connect their medical records and ask specific questions about their health. A couple of days earlier, Amazon had announced that Health AI, an LLM-based tool previously restricted to…</p>
+    </article>
+
+    <article class="card" data-score="0.4067">
+      <div class="card-meta">
+        <span class="source">Hacker News (agentic workflow)</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:40px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="40% relevance"></span> 40%</span>
+        <span class="badge included">In digest</span>
+      </div>
+      <h3 class="card-title">
+        <a href="https://news.ycombinator.com/item?id=47581097" target="_blank" rel="noopener">Ask HN: Are you too getting addicted to the dev workflow of coding with agents?</a>
+      </h3>
+      <p class="summary">HN discussion: Ask HN: Are you too getting addicted to the dev workflow of coding with agents?. Points: 31, Comments: 15</p>
+    </article>
+
+    <article class="card" data-score="0.4694">
+      <div class="card-meta">
+        <span class="source">Lenny's Newsletter</span>
+        <span class="pubdate">Mar 30, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:46px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="46% relevance"></span> 46%</span>
+        <span class="badge included">In digest</span>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.lennysnewsletter.com/p/this-week-on-how-i-ai-how-stripe" target="_blank" rel="noopener">🎙️ This week on How I AI: How Stripe built “minions”—AI coding agents that ship 1,300 PRs per week + How to turn Claude Code into your personal life operating system</a>
+      </h3>
+      <p class="summary">Your weekly listens from How I AI, part of the Lenny&#8217;s Podcast Network</p>
+    </article>
+
+    <article class="card" data-score="0.5377">
+      <div class="card-meta">
+        <span class="source">OpenAI Blog</span>
+        <span class="pubdate">Mar 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:53px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="53% relevance"></span> 53%</span>
+        <span class="badge included">In digest</span>
+      </div>
+      <h3 class="card-title">
+        <a href="https://openai.com/index/helping-disaster-response-teams-asia" target="_blank" rel="noopener">Helping disaster response teams turn AI into action across Asia</a>
+      </h3>
+      <p class="summary">AI for Disaster Response in Asia: OpenAI Workshop with Gates Foundation</p>
+    </article>
+  </main>
+
+  <footer>
+    ai-pm-digest &middot; Powered by sentence-transformers all-MiniLM-L6-v2
+  </footer>
+
+  <script>
+    function filterCards(val) {
+      document.getElementById('threshold-val').textContent = val + '%';
+      const threshold = parseInt(val) / 100;
+      document.querySelectorAll('.card').forEach(card => {
+        const score = parseFloat(card.dataset.score);
+        card.classList.toggle('hidden', score < threshold);
+      });
+    }
+  </script>
+</body>
+</html>

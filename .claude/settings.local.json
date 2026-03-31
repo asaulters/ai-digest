@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python scripts/run_pipeline.py --dry-run)",
+      "Bash(python3 scripts/run_pipeline.py --dry-run)",
+      "Bash(pip show:*)"
+    ]
+  }
+}
