@@ -145,6 +145,34 @@ rss_feeds:
   - name: "The Pragmatic Engineer"
     url: "https://www.pragmaticengineer.com/rss"
     category: "ai-work"
+  - name: "Ben's Bites"
+    url: "https://bensbites.beehiiv.com/feed"
+    category: "ai-tools"
+
+  - name: "The Neuron Daily"
+    url: "https://www.theneurondaily.com/feed"
+    category: "ai-tools"
+
+  - name: "Superhuman AI"
+    url: "https://www.superhuman.ai/rss"
+    category: "ai-tools"
+
+  - name: "AI for Work"
+    url: "https://aiforwork.substack.com/feed"
+    category: "ai-work"
+
+  - name: "The Rundown AI"
+    url: "https://www.therundown.ai/rss"
+    category: "ai-tools"
+
+  - name: "Product Hunt Daily"
+    url: "https://www.producthunt.com/feed"
+    category: "ai-tools"
+
+  - name: "Turing Post"
+    url: "https://www.turingpost.com/feed"
+    category: "ai-tools"
+
 # Algolia HN API searches (fetched via httpx, not feedparser)
 hacker_news_algolia:
   enabled: true
