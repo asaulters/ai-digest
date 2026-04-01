@@ -81,7 +81,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/digest.db dashboard/index.html data/digest.log || true
           git diff --cached --quiet || git commit -m "chore: digest update $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+          git pull origin main --no-rebase && git push origin main
 
       - name: Send error notification on failure
         if: failure()
