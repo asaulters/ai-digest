@@ -16,6 +16,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: digest-pipeline
+  cancel-in-progress: false
+
 jobs:
   digest:
     runs-on: ubuntu-latest
@@ -78,11 +82,14 @@ jobs:
       - name: Commit updated database and dashboard
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/digest.db dashboard/index.html data/digest.log || true
-          git diff --cached --quiet || git commit -m "chore: digest update $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git pull origin main --rebase && git push origin main
+          git fetch origin main
+          git checkout main
+          git add data/digest.db data/digest.log dashboard/index.html
+          git commit -m "chore: digest update $(date -u '+%Y-%m-%d %H:%M UTC')" || echo "Nothing to commit"
+          git pull origin main --rebase --autostash
+          git push origin main
 
       - name: Send error notification on failure
         if: failure()
