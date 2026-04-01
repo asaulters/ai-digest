@@ -58,14 +58,23 @@
                       font-weight: 600; line-height: 1.35; }
     .card-title a:hover { color: #1565c0; text-decoration: underline; }
     .summary { color: #555; font-size: 0.875rem; margin-top: 6px; }
+    .save-btn { background: none; border: none; cursor: pointer; font-size: 1.1rem;
+                 color: #ccc; padding: 0 2px; line-height: 1; transition: color 0.15s; }
+    .save-btn:hover { color: #f59e0b; }
+    .save-btn.saved { color: #f59e0b; }
     .hidden { display: none !important; }
     footer { text-align: center; padding: 32px; font-size: 0.8rem; color: #aaa; }
+    .nav-link { float: right; color: #fff; opacity: 0.8; font-size: 0.85rem;
+                 text-decoration: none; border: 1px solid rgba(255,255,255,0.3);
+                 padding: 4px 12px; border-radius: 4px; }
+    .nav-link:hover { opacity: 1; background: rgba(255,255,255,0.1); }
   </style>
 </head>
 <body>
   <header>
+    <a href="saved.html" class="nav-link">&#9733; Saved Articles</a>
     <h1>AI PM Daily Digest</h1>
-    <div class="meta">Updated April 01, 2026 at 17:12 UTC</div>
+    <div class="meta">Updated April 01, 2026 at 18:14 UTC</div>
     <div class="stats">
       <div class="stat">
         <div class="stat-num">20</div>
@@ -81,56 +90,60 @@
   <section class="briefing-panel" id="briefing">
     <div class="briefing-label">AI Intelligence Briefing</div>
     <div class="briefing-body">
-      <p># Daily AI Intelligence Briefing</p>
+      <p># AI PM Daily Brief</p>
 
 <h2 class="briefing-signal-heading">Today's Signal</h2>
-<p>The infrastructure layer for AI workflows is rapidly maturing, with tools emerging to orchestrate AI agents, deploy AI-native applications, and systematically capture feedback for product decisions. This signals a shift from experimental AI use to production-ready systems that can handle the orchestration and interface challenges that have been bottlenecks for applied AI adoption.</p>
+<p>The gap between AI capability and practical application remains the biggest challenge facing AI product managers. Today's releases highlight a core tension: while we have powerful AI agents that can code, analyze feedback, and automate deployments, the real bottleneck is building the right interfaces and orchestration layers that make these capabilities actually useful in professional workflows.</p>
 
 <h2 class="briefing-heading">Tools & Releases Worth Knowing</h2>
 
-<p><strong>Baton</strong> - Orchestrates AI coding agents to work together on development tasks.</p>
+<p><strong>Baton</strong> - Orchestrates multiple AI coding agents to work together on development tasks.</p>
 <ul class="briefing-list">
-<li>Why it matters: Shows the evolution from single AI assistants to multi-agent systems that can handle complex project workflows with coordination between specialized agents.</li>
-<li>Skill or action: Learn multi-agent orchestration patterns and how to design agent handoffs for your own workflow automation projects.</li>
+<li>Why it matters: Shows the evolution from single AI assistants to coordinated multi-agent systems, which mirrors how PM work often requires coordinating multiple AI tools across a project lifecycle.</li>
+<li>Skill or action: Learn about agent orchestration patterns and how to design workflows that chain multiple AI capabilities together.</li>
 </ul>
 
-<p><strong>OpenBerth</strong> - Self-hosted deployment platform specifically designed for AI-native applications.</p>
+<p><strong>Audyr</strong> - AI tool that captures customer feedback and translates it into product development priorities.</p>
 <ul class="briefing-list">
-<li>Why it matters: Addresses the deployment and scaling challenges unique to AI products, giving AI PMs infrastructure options beyond generic cloud platforms.</li>
-<li>Skill or action: Research AI-specific deployment requirements and infrastructure considerations for the AI products you're building.</li>
+<li>Why it matters: Automates the classic PM workflow of feedback synthesis and roadmap prioritization, showing how AI can augment strategic decision-making beyond just tactical tasks.</li>
+<li>Skill or action: Practice prompt engineering for qualitative data analysis and learn how to structure feedback processing workflows.</li>
 </ul>
 
-<p><strong>Audyr</strong> - AI system that captures customer feedback and provides product build recommendations.</p>
+<p><strong>OpenBerth</strong> - Self-hosted deployment platform designed specifically for AI assistants.</p>
 <ul class="briefing-list">
-<li>Why it matters: Automates the feedback-to-feature pipeline that AI PMs need to manage, turning unstructured customer input into structured product decisions.</li>
-<li>Skill or action: Design a feedback capture and analysis workflow for your current projects using AI to process qualitative input.</li>
+<li>Why it matters: Infrastructure for AI-native applications is becoming a distinct category, important for PMs who need to understand the deployment and scaling considerations of AI products.</li>
+<li>Skill or action: Understand the infrastructure requirements and deployment patterns specific to AI applications versus traditional software.</li>
 </ul>
 
 <h2 class="briefing-heading">Workflow & Use Case Ideas</h2>
 
-<p><strong>Idea: Multi-agent development orchestration</strong> — Why it matters: Instead of managing individual AI tools, you can coordinate specialized agents to handle different aspects of a project (coding, testing, documentation) with defined handoffs.</p>
+<p><strong>Idea:</strong> Multi-agent orchestration for project management tasks — Why it matters: Instead of using one AI for everything, coordinate specialized agents for requirements gathering, risk assessment, and stakeholder communication.</p>
 
-<p><strong>Idea: AI-native feedback processing pipeline</strong> — Why it matters: Systematically convert customer conversations, support tickets, and user research into prioritized product requirements without manual synthesis work.</p>
+<p><strong>Idea:</strong> AI-powered feedback synthesis pipelines — Why it matters: Automate the collection, categorization, and prioritization of stakeholder feedback to inform sprint planning and roadmap decisions.</p>
 
-<p><strong>Idea: Interface design as AI capability multiplier</strong> — Why it matters: The same AI capabilities can be dramatically more or less useful depending on how they're packaged and presented to users.</p>
+<p><strong>Idea:</strong> Self-hosted AI deployment for compliance-heavy workflows — Why it matters: Organizations with strict data governance can still leverage AI capabilities while maintaining control over their infrastructure and data.</p>
 
 <h2 class="briefing-heading">What The Leaders Are Doing</h2>
 
-<p>Companies are moving beyond single-purpose AI tools to build orchestrated systems where multiple AI agents handle different workflow stages. Organizations are also investing in AI-specific infrastructure rather than trying to force AI applications into traditional deployment models. Product teams are implementing systematic AI-driven feedback analysis to accelerate their build-measure-learn cycles.</p>
+<p>Based on today's signals, forward-thinking teams are moving beyond single-purpose AI tools toward orchestrated AI workflows. They're building systems where multiple AI agents handle different aspects of the same project, rather than trying to prompt one model to do everything. There's also a clear trend toward AI-native infrastructure solutions, suggesting that successful AI products require different deployment and scaling approaches than traditional software.</p>
 
 <h2 class="briefing-heading">Skill to Build This Week</h2>
 
-<p><strong>Learn multi-agent system design patterns</strong> - Why now: The shift from individual AI assistants to coordinated agent teams is accelerating, and understanding orchestration will be crucial for building complex AI workflows. Concrete starting point: Spend an hour researching agent orchestration frameworks like CrewAI or AutoGen, then map out how you could break one of your current manual processes into agent-specific tasks with clear handoffs.</p>
+<p><strong>Agent Orchestration Design</strong> - Learn how to map complex workflows to multiple specialized AI agents rather than relying on monolithic AI solutions. Start by taking one of your current multi-step PM workflows (like requirements gathering) and breaking it into discrete tasks that could be handled by different AI tools, then research how platforms like Baton coordinate these handoffs. This skill is becoming essential as AI products mature from single-agent assistants to multi-agent systems.</p>
 
 <h2 class="briefing-heading">Articles In Full Digest</h2>
 
-<p><strong>Baton</strong> | Product Hunt Daily | 63% | Tool for orchestrating AI coding agents to work together on development tasks. Represents the evolution toward multi-agent systems for complex workflows.</p>
+<p><strong>Baton</strong> | Product Hunt Daily | 63% relevance</p>
+<p>AI coding agent orchestration platform that coordinates multiple specialized agents. Represents the shift toward multi-agent workflows rather than relying on single AI assistants.</p>
 
-<p><strong>Claude Dispatch and the Power of Interfaces</strong> | One Useful Thing (Ethan Mollick) | 52% | Analysis of how interface design can dramatically impact AI capability utilization. Emphasizes that having capable AI isn't enough without proper tools and interfaces to deploy it effectively.</p>
+<p><strong>Claude Dispatch and the Power of Interfaces</strong> | One Useful Thing (Ethan Mollick) | 52% relevance</p>
+<p>Explores the gap between AI capability and practical application, emphasizing that interface design is often the limiting factor. Highlights how even powerful AI needs the right workflow structure to be useful.</p>
 
-<p><strong>Audyr</strong> | Product Hunt Daily | 51% | AI system that captures customer feedback and provides recommendations on what to build next. Automates the feedback analysis and prioritization process for product teams.</p>
+<p><strong>Audyr</strong> | Product Hunt Daily | 51% relevance</p>
+<p>AI-powered customer feedback analysis tool that identifies patterns and suggests product priorities. Shows automation potential for traditional PM activities like user research synthesis.</p>
 
-<p><strong>OpenBerth</strong> | Product Hunt Daily | 48% | Self-hosted deployment platform specifically designed for AI-native applications. Addresses unique infrastructure needs of AI products beyond standard cloud deployment options.</p>
+<p><strong>OpenBerth</strong> | Product Hunt Daily | 48% relevance</p>
+<p>Self-hosted deployment platform specifically designed for AI assistants and applications. Addresses infrastructure needs for AI-native products in enterprise environments.</p>
     </div>
   </section>
 
@@ -146,12 +159,13 @@
 
   <main id="articles">
     
-    <article class="card" data-score="0.4002">
+    <article class="card" data-score="0.4002" data-url="https://www.producthunt.com/products/claras">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:40px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="40% relevance"></span> 40%</span>
         
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/claras&quot;, &quot;title&quot;: &quot;Claras&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4002, &quot;summary&quot;: &quot;Skip ahead &amp; chat with any YouTube video using AI Discussion | Link&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.producthunt.com/products/claras" target="_blank" rel="noopener">Claras</a>
@@ -159,12 +173,13 @@
       <p class="summary">Skip ahead & chat with any YouTube video using AI Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4043">
+    <article class="card" data-score="0.4043" data-url="https://www.producthunt.com/products/openbox">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:40px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="40% relevance"></span> 40%</span>
         
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/openbox&quot;, &quot;title&quot;: &quot;OpenBox&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4043, &quot;summary&quot;: &quot;See, verify, and govern every agent action. Discussion | Link&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.producthunt.com/products/openbox" target="_blank" rel="noopener">OpenBox</a>
@@ -172,12 +187,13 @@
       <p class="summary">See, verify, and govern every agent action. Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4051">
+    <article class="card" data-score="0.4051" data-url="https://www.producthunt.com/products/keplars">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:40px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="40% relevance"></span> 40%</span>
         
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/keplars&quot;, &quot;title&quot;: &quot;Keplars&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4051, &quot;summary&quot;: &quot;Email Infrastructure for Modern Product Teams Discussion | Link&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.producthunt.com/products/keplars" target="_blank" rel="noopener">Keplars</a>
@@ -185,12 +201,13 @@
       <p class="summary">Email Infrastructure for Modern Product Teams Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4368">
+    <article class="card" data-score="0.4368" data-url="https://www.producthunt.com/products/slack">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Apr 01, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:43px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="43% relevance"></span> 43%</span>
         
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/slack&quot;, &quot;title&quot;: &quot;Slackbot&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4368, &quot;summary&quot;: &quot;Team up with your AI teammate in the all-new Slack Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 01, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.producthunt.com/products/slack" target="_blank" rel="noopener">Slackbot</a>
@@ -198,12 +215,13 @@
       <p class="summary">Team up with your AI teammate in the all-new Slack Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4814">
+    <article class="card" data-score="0.4814" data-url="https://www.producthunt.com/products/openberth">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:48px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="48% relevance"></span> 48%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/openberth&quot;, &quot;title&quot;: &quot;OpenBerth&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4814, &quot;summary&quot;: &quot;AI-assistant native self-hosted deployment platform Discussion | Link&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.producthunt.com/products/openberth" target="_blank" rel="noopener">OpenBerth</a>
@@ -211,12 +229,13 @@
       <p class="summary">AI-assistant native self-hosted deployment platform Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.5114">
+    <article class="card" data-score="0.5114" data-url="https://www.producthunt.com/products/audyr-understand-your-customers">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:51px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="51% relevance"></span> 51%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/audyr-understand-your-customers&quot;, &quot;title&quot;: &quot;Audyr&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.5114, &quot;summary&quot;: &quot;AI captures feedback and tells you what to build next Discussion | Link&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.producthunt.com/products/audyr-understand-your-customers" target="_blank" rel="noopener">Audyr</a>
@@ -224,12 +243,13 @@
       <p class="summary">AI captures feedback and tells you what to build next Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.5248">
+    <article class="card" data-score="0.5248" data-url="https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of">
       <div class="card-meta">
         <span class="source">One Useful Thing (Ethan Mollick)</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:52px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="52% relevance"></span> 52%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of&quot;, &quot;title&quot;: &quot;Claude Dispatch and the Power of Interfaces&quot;, &quot;source&quot;: &quot;One Useful Thing (Ethan Mollick)&quot;, &quot;score&quot;: 0.5248, &quot;summary&quot;: &quot;We often lack the tools for the job, even if the AI is capable enough&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of" target="_blank" rel="noopener">Claude Dispatch and the Power of Interfaces</a>
@@ -237,12 +257,13 @@
       <p class="summary">We often lack the tools for the job, even if the AI is capable enough</p>
     </article>
 
-    <article class="card" data-score="0.6375">
+    <article class="card" data-score="0.6375" data-url="https://www.producthunt.com/products/baton-2">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:63px;height:8px;background:#2ecc71;border-radius:3px;vertical-align:middle" title="63% relevance"></span> 63%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/baton-2&quot;, &quot;title&quot;: &quot;Baton&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.6375, &quot;summary&quot;: &quot;Orchestrate your AI coding agents Discussion | Link&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.producthunt.com/products/baton-2" target="_blank" rel="noopener">Baton</a>
@@ -250,12 +271,13 @@
       <p class="summary">Orchestrate your AI coding agents Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4024">
+    <article class="card" data-score="0.4024" data-url="https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/">
       <div class="card-meta">
         <span class="source">MIT Technology Review - AI</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:40px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="40% relevance"></span> 40%</span>
         
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/&quot;, &quot;title&quot;: &quot;AI benchmarks are broken. Here’s what we need instead.&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.4024, &quot;summary&quot;: &quot;For decades, artificial intelligence has been evaluated through the question of whether machines outperform humans. From chess to advanced math, from coding to essay writing, the performance of AI models and applications is tested against that of individual humans completing tasks.&amp;#160; This framin&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/" target="_blank" rel="noopener">AI benchmarks are broken. Here’s what we need instead.</a>
@@ -263,12 +285,13 @@
       <p class="summary">For decades, artificial intelligence has been evaluated through the question of whether machines outperform humans. From chess to advanced math, from coding to essay writing, the performance of AI models and applications is tested against that of individual humans completing tasks.&#160; This framin…</p>
     </article>
 
-    <article class="card" data-score="0.4245">
+    <article class="card" data-score="0.4245" data-url="https://www.technologyreview.com/2026/04/01/1134993/the-download-gig-workers-training-humanoids-better-ai-benchmarks/">
       <div class="card-meta">
         <span class="source">MIT Technology Review - AI</span>
         <span class="pubdate">Apr 01, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:42px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="42% relevance"></span> 42%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/04/01/1134993/the-download-gig-workers-training-humanoids-better-ai-benchmarks/&quot;, &quot;title&quot;: &quot;The Download: gig workers training humanoids, and better AI benchmarks&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.4245, &quot;summary&quot;: &quot;This is today&amp;#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&amp;#8217;s going on in the world of technology. The gig workers who are training humanoid robots at home&amp;#160; When Zeus, a medical student in Nigeria, returns to his apartment from a long day at th&quot;, &quot;published&quot;: &quot;Apr 01, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.technologyreview.com/2026/04/01/1134993/the-download-gig-workers-training-humanoids-better-ai-benchmarks/" target="_blank" rel="noopener">The Download: gig workers training humanoids, and better AI benchmarks</a>
@@ -276,12 +299,13 @@
       <p class="summary">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. The gig workers who are training humanoid robots at home&#160; When Zeus, a medical student in Nigeria, returns to his apartment from a long day at th…</p>
     </article>
 
-    <article class="card" data-score="0.4295">
+    <article class="card" data-score="0.4295" data-url="https://towardsdatascience.com/what-happens-now-that-ai-is-the-first-analyst-on-your-team/">
       <div class="card-meta">
         <span class="source">Towards Data Science</span>
         <span class="pubdate">Apr 01, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:42px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="42% relevance"></span> 42%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://towardsdatascience.com/what-happens-now-that-ai-is-the-first-analyst-on-your-team/&quot;, &quot;title&quot;: &quot;What Happens Now That AI is the First Analyst On Your Team?&quot;, &quot;source&quot;: &quot;Towards Data Science&quot;, &quot;score&quot;: 0.4295, &quot;summary&quot;: &quot;How I am adapting in my career in the age of AI, automation, and when everything moving faster than expected. The post What Happens Now That AI is the First Analyst On Your Team? appeared first on Towards Data Science .&quot;, &quot;published&quot;: &quot;Apr 01, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://towardsdatascience.com/what-happens-now-that-ai-is-the-first-analyst-on-your-team/" target="_blank" rel="noopener">What Happens Now That AI is the First Analyst On Your Team?</a>
@@ -289,12 +313,13 @@
       <p class="summary">How I am adapting in my career in the age of AI, automation, and when everything moving faster than expected. The post What Happens Now That AI is the First Analyst On Your Team? appeared first on Towards Data Science .</p>
     </article>
 
-    <article class="card" data-score="0.4297">
+    <article class="card" data-score="0.4297" data-url="https://openai.com/index/accelerating-the-next-phase-ai">
       <div class="card-meta">
         <span class="source">OpenAI Blog</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:42px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="42% relevance"></span> 42%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://openai.com/index/accelerating-the-next-phase-ai&quot;, &quot;title&quot;: &quot;Accelerating the next phase of AI&quot;, &quot;source&quot;: &quot;OpenAI Blog&quot;, &quot;score&quot;: 0.4297, &quot;summary&quot;: &quot;OpenAI raises $122 billion in new funding to expand frontier AI globally, invest in next-generation compute, and meet growing demand for ChatGPT, Codex, and enterprise AI.&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://openai.com/index/accelerating-the-next-phase-ai" target="_blank" rel="noopener">Accelerating the next phase of AI</a>
@@ -302,12 +327,13 @@
       <p class="summary">OpenAI raises $122 billion in new funding to expand frontier AI globally, invest in next-generation compute, and meet growing demand for ChatGPT, Codex, and enterprise AI.</p>
     </article>
 
-    <article class="card" data-score="0.4391">
+    <article class="card" data-score="0.4391" data-url="https://www.technologyreview.com/2026/03/31/1134934/the-download-testing-ai-health-tools-pentagon-anthropic-culture-war-backfires/">
       <div class="card-meta">
         <span class="source">MIT Technology Review - AI</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:43px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="43% relevance"></span> 43%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/03/31/1134934/the-download-testing-ai-health-tools-pentagon-anthropic-culture-war-backfires/&quot;, &quot;title&quot;: &quot;The Download: AI health tools and the Pentagon’s Anthropic culture war&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.4391, &quot;summary&quot;: &quot;This is today&amp;#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&amp;#8217;s going on in the world of technology. There are more AI health tools than ever—but how well do they work?&amp;#160; In the last few months alone, Microsoft, Amazon, and OpenAI have all launche&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.technologyreview.com/2026/03/31/1134934/the-download-testing-ai-health-tools-pentagon-anthropic-culture-war-backfires/" target="_blank" rel="noopener">The Download: AI health tools and the Pentagon’s Anthropic culture war</a>
@@ -315,12 +341,13 @@
       <p class="summary">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. There are more AI health tools than ever—but how well do they work?&#160; In the last few months alone, Microsoft, Amazon, and OpenAI have all launche…</p>
     </article>
 
-    <article class="card" data-score="0.4505">
+    <article class="card" data-score="0.4505" data-url="https://www.atlassian.com/blog/developer/rovo-dev-keeps-long-sessions-useful">
       <div class="card-meta">
         <span class="source">Atlassian Blog</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:45px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="45% relevance"></span> 45%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.atlassian.com/blog/developer/rovo-dev-keeps-long-sessions-useful&quot;, &quot;title&quot;: &quot;Agent Context Pruning: How Rovo Dev keeps long sessions useful&quot;, &quot;source&quot;: &quot;Atlassian Blog&quot;, &quot;score&quot;: 0.4505, &quot;summary&quot;: &quot;AI agents become more useful as they work through longer tasks. But longer tasks also create a memory problem. A... The post Agent Context Pruning: How Rovo Dev keeps long sessions useful appeared first on Work Life by Atlassian .&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.atlassian.com/blog/developer/rovo-dev-keeps-long-sessions-useful" target="_blank" rel="noopener">Agent Context Pruning: How Rovo Dev keeps long sessions useful</a>
@@ -328,12 +355,13 @@
       <p class="summary">AI agents become more useful as they work through longer tasks. But longer tasks also create a memory problem. A... The post Agent Context Pruning: How Rovo Dev keeps long sessions useful appeared first on Work Life by Atlassian .</p>
     </article>
 
-    <article class="card" data-score="0.4554">
+    <article class="card" data-score="0.4554" data-url="https://www.producttalk.org/product-builders-all-things-product-podcast-with-teresa-torres-petra-wille/">
       <div class="card-meta">
         <span class="source">Product Talk</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:45px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="45% relevance"></span> 45%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producttalk.org/product-builders-all-things-product-podcast-with-teresa-torres-petra-wille/&quot;, &quot;title&quot;: &quot;Product Builders - All Things Product Podcast with Teresa Torres &amp; Petra Wille&quot;, &quot;source&quot;: &quot;Product Talk&quot;, &quot;score&quot;: 0.4554, &quot;summary&quot;: &quot;Listen to this episode on: Spotify | Apple Podcasts Is product management dead? Petra Wille and Teresa Torres unpack the big question making the rounds at conferences: Is PM disappearing&amp;#x2014;or evolving? Their take: product management isn&amp;#x2019;t dead. But the traditional product trio (PM, desig&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.producttalk.org/product-builders-all-things-product-podcast-with-teresa-torres-petra-wille/" target="_blank" rel="noopener">Product Builders - All Things Product Podcast with Teresa Torres & Petra Wille</a>
@@ -341,12 +369,13 @@
       <p class="summary">Listen to this episode on: Spotify | Apple Podcasts Is product management dead? Petra Wille and Teresa Torres unpack the big question making the rounds at conferences: Is PM disappearing&#x2014;or evolving? Their take: product management isn&#x2019;t dead. But the traditional product trio (PM, desig…</p>
     </article>
 
-    <article class="card" data-score="0.5255">
+    <article class="card" data-score="0.5255" data-url="https://blog.langchain.com/announcing-the-langchain-mongodb-partnership-the-ai-agent-stack-that-runs-on-the-database-you-already-trust/">
       <div class="card-meta">
         <span class="source">LangChain Blog</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:52px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="52% relevance"></span> 52%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://blog.langchain.com/announcing-the-langchain-mongodb-partnership-the-ai-agent-stack-that-runs-on-the-database-you-already-trust/&quot;, &quot;title&quot;: &quot;Announcing the LangChain + MongoDB Partnership: The AI Agent Stack That Runs On The Database You Already Trust&quot;, &quot;source&quot;: &quot;LangChain Blog&quot;, &quot;score&quot;: 0.5255, &quot;summary&quot;: &quot;Build production AI agents on MongoDB Atlas — with vector search, persistent memory, natural-language querying, and end-to-end observability built in.&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://blog.langchain.com/announcing-the-langchain-mongodb-partnership-the-ai-agent-stack-that-runs-on-the-database-you-already-trust/" target="_blank" rel="noopener">Announcing the LangChain + MongoDB Partnership: The AI Agent Stack That Runs On The Database You Already Trust</a>
@@ -354,12 +383,13 @@
       <p class="summary">Build production AI agents on MongoDB Atlas — with vector search, persistent memory, natural-language querying, and end-to-end observability built in.</p>
     </article>
 
-    <article class="card" data-score="0.5405">
+    <article class="card" data-score="0.5405" data-url="https://towardsdatascience.com/building-a-personal-ai-agent-in-a-couple-of-hours/">
       <div class="card-meta">
         <span class="source">Towards Data Science</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:54px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="54% relevance"></span> 54%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://towardsdatascience.com/building-a-personal-ai-agent-in-a-couple-of-hours/&quot;, &quot;title&quot;: &quot;Building a Personal AI Agent in a couple of Hours&quot;, &quot;source&quot;: &quot;Towards Data Science&quot;, &quot;score&quot;: 0.5405, &quot;summary&quot;: &quot;I’ve been so surprised by how fast individual builders can now ship real and useful prototypes. Tools like Claude Code, Google AntiGravity, and the growing ecosystem around them have crossed a threshold: you can inspect what others are building online and realize just how fast you can build today. O&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://towardsdatascience.com/building-a-personal-ai-agent-in-a-couple-of-hours/" target="_blank" rel="noopener">Building a Personal AI Agent in a couple of Hours</a>
@@ -367,12 +397,13 @@
       <p class="summary">I’ve been so surprised by how fast individual builders can now ship real and useful prototypes. Tools like Claude Code, Google AntiGravity, and the growing ecosystem around them have crossed a threshold: you can inspect what others are building online and realize just how fast you can build today. O…</p>
     </article>
 
-    <article class="card" data-score="0.546">
+    <article class="card" data-score="0.546" data-url="https://www.technologyreview.com/2026/03/31/1134762/shifting-to-ai-model-customization-is-an-architectural-imperative/">
       <div class="card-meta">
         <span class="source">MIT Technology Review - AI</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:54px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="54% relevance"></span> 54%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/03/31/1134762/shifting-to-ai-model-customization-is-an-architectural-imperative/&quot;, &quot;title&quot;: &quot;Shifting to AI model customization is an architectural imperative&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.546, &quot;summary&quot;: &quot;In the early days of large language models (LLMs), we grew accustomed to massive 10x jumps in reasoning and coding capability with every new model iteration. Today, those jumps have flattened into incremental gains. The exception is domain-specialized intelligence, where true step-function improveme&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.technologyreview.com/2026/03/31/1134762/shifting-to-ai-model-customization-is-an-architectural-imperative/" target="_blank" rel="noopener">Shifting to AI model customization is an architectural imperative</a>
@@ -380,12 +411,13 @@
       <p class="summary">In the early days of large language models (LLMs), we grew accustomed to massive 10x jumps in reasoning and coding capability with every new model iteration. Today, those jumps have flattened into incremental gains. The exception is domain-specialized intelligence, where true step-function improveme…</p>
     </article>
 
-    <article class="card" data-score="0.5571">
+    <article class="card" data-score="0.5571" data-url="https://www.lennysnewsletter.com/p/listen-openclaw-a-power-users-guide">
       <div class="card-meta">
         <span class="source">Lenny's Newsletter</span>
         <span class="pubdate">Apr 01, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:55px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="55% relevance"></span> 55%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.lennysnewsletter.com/p/listen-openclaw-a-power-users-guide&quot;, &quot;title&quot;: &quot;Listen: OpenClaw: A power-user&#x27;s guide to the most powerful personal AI tool since ChatGPT&quot;, &quot;source&quot;: &quot;Lenny&#x27;s Newsletter&quot;, &quot;score&quot;: 0.5571, &quot;summary&quot;: &quot;An audio edition of Lenny&#x27;s Newsletter post (powered by AI)&quot;, &quot;published&quot;: &quot;Apr 01, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.lennysnewsletter.com/p/listen-openclaw-a-power-users-guide" target="_blank" rel="noopener">Listen: OpenClaw: A power-user's guide to the most powerful personal AI tool since ChatGPT</a>
@@ -393,12 +425,13 @@
       <p class="summary">An audio edition of Lenny's Newsletter post (powered by AI)</p>
     </article>
 
-    <article class="card" data-score="0.5787">
+    <article class="card" data-score="0.5787" data-url="https://www.lennysnewsletter.com/p/openclaw-the-complete-guide-to-building">
       <div class="card-meta">
         <span class="source">Lenny's Newsletter</span>
         <span class="pubdate">Mar 31, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:57px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="57% relevance"></span> 57%</span>
         <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.lennysnewsletter.com/p/openclaw-the-complete-guide-to-building&quot;, &quot;title&quot;: &quot;OpenClaw: The complete guide to building, training, and living with your personal AI agent&quot;, &quot;source&quot;: &quot;Lenny&#x27;s Newsletter&quot;, &quot;score&quot;: 0.5787, &quot;summary&quot;: &quot;I built a team of 9 AI agents that run my work and life. Here&#x27;s how you can too.&quot;, &quot;published&quot;: &quot;Mar 31, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.lennysnewsletter.com/p/openclaw-the-complete-guide-to-building" target="_blank" rel="noopener">OpenClaw: The complete guide to building, training, and living with your personal AI agent</a>
@@ -412,6 +445,40 @@
   </footer>
 
   <script>
+    const STORAGE_KEY = 'aipm_saved_articles';
+
+    function getSaved() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+      catch { return {}; }
+    }
+
+    function toggleSave(btn) {
+      const article = JSON.parse(btn.dataset.article);
+      const saved = getSaved();
+      if (saved[article.url]) {
+        delete saved[article.url];
+        btn.classList.remove('saved');
+        btn.title = 'Save article';
+      } else {
+        article.savedAt = new Date().toISOString();
+        saved[article.url] = article;
+        btn.classList.add('saved');
+        btn.title = 'Saved';
+      }
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+    }
+
+    function restoreSaveStates() {
+      const saved = getSaved();
+      document.querySelectorAll('.save-btn').forEach(btn => {
+        const article = JSON.parse(btn.dataset.article);
+        if (saved[article.url]) {
+          btn.classList.add('saved');
+          btn.title = 'Saved';
+        }
+      });
+    }
+
     function filterCards(val) {
       document.getElementById('threshold-val').textContent = val + '%';
       const threshold = parseInt(val) / 100;
@@ -420,6 +487,8 @@
         card.classList.toggle('hidden', score < threshold);
       });
     }
+
+    restoreSaveStates();
   </script>
 </body>
 </html>
