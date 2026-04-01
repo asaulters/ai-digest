@@ -27,53 +27,96 @@ def _load_settings() -> dict:
 # Email
 # ---------------------------------------------------------------------------
 
-def _build_email_html(articles: list[dict], run_date: str) -> str:
-    rows = ""
-    for i, a in enumerate(articles, 1):
-        score_pct = int(a.get("score", 0) * 100)
-        pub = a.get("published", "")
-        if pub:
-            try:
-                pub = datetime.fromisoformat(pub).strftime("%b %d")
-            except Exception:
-                pub = pub[:10]
-        rows += f"""
+def _markdown_to_html(md: str) -> str:
+    """Convert the briefing markdown to clean HTML for email."""
+    import re
+    html_lines = []
+    in_list = False
+    for line in md.splitlines():
+        # H2 sections
+        if line.startswith("## "):
+            if in_list:
+                html_lines.append("</ul>")
+                in_list = False
+            heading = line[3:].strip()
+            html_lines.append(f'<h2 style="font-size:17px;font-weight:700;margin:24px 0 8px;color:#1a1a2e;border-bottom:1px solid #e0e0e0;padding-bottom:4px">{heading}</h2>')
+        # Bullet points
+        elif line.startswith("- "):
+            if not in_list:
+                html_lines.append('<ul style="margin:8px 0 8px 20px;padding:0">')
+                in_list = True
+            content = line[2:].strip()
+            # Bold **text**
+            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
+            html_lines.append(f'<li style="margin-bottom:6px;color:#333;font-size:14px">{content}</li>')
+        # Empty line
+        elif line.strip() == "":
+            if in_list:
+                html_lines.append("</ul>")
+                in_list = False
+            html_lines.append("")
+        # Regular paragraph
+        else:
+            if in_list:
+                html_lines.append("</ul>")
+                in_list = False
+            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
+            html_lines.append(f'<p style="margin:6px 0;font-size:14px;color:#333;line-height:1.6">{content}</p>')
+    if in_list:
+        html_lines.append("</ul>")
+    return "\n".join(html_lines)
+
+
+def _build_email_html(articles: list[dict], run_date: str, briefing: Optional[str] = None) -> str:
+    if briefing:
+        briefing_html = _markdown_to_html(briefing)
+        body = f"""
+  <div style="background:#f0f4ff;border-left:4px solid #1a1a2e;padding:14px 20px;margin-bottom:24px;border-radius:0 6px 6px 0">
+    <p style="margin:0;font-size:12px;font-weight:600;color:#555;text-transform:uppercase;letter-spacing:.05em">AI Intelligence Briefing</p>
+  </div>
+  {briefing_html}"""
+    else:
+        rows = ""
+        for i, a in enumerate(articles, 1):
+            score_pct = int(a.get("score", 0) * 100)
+            pub = a.get("published", "")
+            if pub:
+                try:
+                    pub = datetime.fromisoformat(pub).strftime("%b %d")
+                except Exception:
+                    pub = pub[:10]
+            rows += f"""
         <tr style="border-bottom:1px solid #eee">
-          <td style="padding:12px 8px;color:#888;font-size:12px;white-space:nowrap">
-            #{i} &nbsp; {score_pct}%
-          </td>
+          <td style="padding:12px 8px;color:#888;font-size:12px;white-space:nowrap">#{i} &nbsp; {score_pct}%</td>
           <td style="padding:12px 8px">
-            <a href="{a['url']}" style="color:#1a0dab;font-weight:bold;text-decoration:none">
-              {a['title']}
-            </a><br>
+            <a href="{a['url']}" style="color:#1a0dab;font-weight:bold;text-decoration:none">{a['title']}</a><br>
             <span style="color:#666;font-size:12px">{a.get('source_name','')}</span>
             {f'<span style="color:#aaa;font-size:12px"> &middot; {pub}</span>' if pub else ''}
             {f'<p style="margin:4px 0 0;color:#444;font-size:13px">{a["summary"][:200]}…</p>' if a.get("summary") else ''}
           </td>
         </tr>"""
+        body = f'<table style="width:100%;border-collapse:collapse">{rows}</table>'
 
     return f"""<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"><title>AI PM Digest</title></head>
 <body style="font-family:Georgia,serif;max-width:700px;margin:0 auto;padding:20px;color:#222">
-  <h1 style="font-size:24px;border-bottom:3px solid #333;padding-bottom:8px">
+  <h1 style="font-size:24px;border-bottom:3px solid #1a1a2e;padding-bottom:8px">
     AI PM Digest &mdash; {run_date}
   </h1>
-  <p style="color:#666;font-size:13px">
-    {len(articles)} articles selected by semantic relevance to your topic focus.
+  <p style="color:#666;font-size:13px;margin-bottom:20px">
+    {len(articles)} articles &middot; Powered by Claude + all-MiniLM-L6-v2
   </p>
-  <table style="width:100%;border-collapse:collapse">
-    {rows}
-  </table>
+  {body}
   <hr style="margin-top:32px;border:none;border-top:1px solid #ddd">
-  <p style="color:#aaa;font-size:11px;text-align:center">
-    Powered by ai-pm-digest &middot; sentence-transformers all-MiniLM-L6-v2
-  </p>
+  <p style="color:#aaa;font-size:11px;text-align:center">ai-pm-digest</p>
 </body>
 </html>"""
 
 
-def _build_email_text(articles: list[dict], run_date: str) -> str:
+def _build_email_text(articles: list[dict], run_date: str, briefing: Optional[str] = None) -> str:
+    if briefing:
+        return f"AI PM Digest — {run_date}\n{'=' * 50}\n\n{briefing}"
     lines = [f"AI PM Digest — {run_date}", "=" * 50, ""]
     for i, a in enumerate(articles, 1):
         score_pct = int(a.get("score", 0) * 100)
@@ -88,6 +131,7 @@ def _build_email_text(articles: list[dict], run_date: str) -> str:
 
 def send_email(
     articles: list[dict],
+    briefing: Optional[str] = None,
     api_key: Optional[str] = None,
     from_address: Optional[str] = None,
     to_address: Optional[str] = None,
@@ -113,8 +157,8 @@ def send_email(
         "from": from_address,
         "to": [to_address],
         "subject": subject,
-        "html": _build_email_html(articles, run_date),
-        "text": _build_email_text(articles, run_date),
+        "html": _build_email_html(articles, run_date, briefing=briefing),
+        "text": _build_email_text(articles, run_date, briefing=briefing),
     }
 
     try:
@@ -211,8 +255,47 @@ def _article_card(a: dict, idx: int) -> str:
     </article>"""
 
 
+def _briefing_to_dashboard_html(md: str) -> str:
+    """Convert the briefing markdown to styled HTML sections for the dashboard."""
+    import re
+    html_parts = []
+    in_list = False
+    for line in md.splitlines():
+        if line.startswith("## "):
+            if in_list:
+                html_parts.append("</ul>")
+                in_list = False
+            heading = line[3:].strip()
+            # Highlight the first section specially
+            if "Today's Signal" in heading:
+                html_parts.append(f'<h2 class="briefing-signal-heading">{heading}</h2>')
+            else:
+                html_parts.append(f'<h2 class="briefing-heading">{heading}</h2>')
+        elif line.startswith("- "):
+            if not in_list:
+                html_parts.append('<ul class="briefing-list">')
+                in_list = True
+            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line[2:])
+            html_parts.append(f"<li>{content}</li>")
+        elif line.strip() == "":
+            if in_list:
+                html_parts.append("</ul>")
+                in_list = False
+            html_parts.append("")
+        else:
+            if in_list:
+                html_parts.append("</ul>")
+                in_list = False
+            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line)
+            html_parts.append(f"<p>{content}</p>")
+    if in_list:
+        html_parts.append("</ul>")
+    return "\n".join(html_parts)
+
+
 def generate_dashboard(
     articles: list[dict],
+    briefing: Optional[str] = None,
     output_path: Optional[Path] = None,
     title: Optional[str] = None,
 ) -> Path:
@@ -229,6 +312,17 @@ def generate_dashboard(
     cards_html = "\n".join(_article_card(a, i) for i, a in enumerate(articles, 1))
     total = len(articles)
     in_digest = sum(1 for a in articles if a.get("included"))
+
+    briefing_section = ""
+    if briefing:
+        briefing_html = _briefing_to_dashboard_html(briefing)
+        briefing_section = f"""
+  <section class="briefing-panel" id="briefing">
+    <div class="briefing-label">AI Intelligence Briefing</div>
+    <div class="briefing-body">
+      {briefing_html}
+    </div>
+  </section>"""
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -247,12 +341,34 @@ def generate_dashboard(
     .stat {{ background: rgba(255,255,255,0.1); border-radius: 6px; padding: 8px 16px; }}
     .stat-num {{ font-size: 1.4rem; font-weight: 700; }}
     .stat-label {{ font-size: 0.75rem; color: #ccc; }}
+
+    /* Briefing panel */
+    .briefing-panel {{ max-width: 900px; margin: 24px auto 0; padding: 0 16px; }}
+    .briefing-label {{ font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: .08em; color: #888; margin-bottom: 4px; }}
+    .briefing-body {{ background: #fff; border-radius: 10px; padding: 28px 32px;
+                      box-shadow: 0 2px 8px rgba(0,0,0,0.08); }}
+    .briefing-signal-heading {{ font-size: 1.1rem; font-weight: 700; color: #1a1a2e;
+                                 border-left: 4px solid #f59e0b; padding-left: 12px;
+                                 margin: 0 0 12px; }}
+    .briefing-heading {{ font-size: 1rem; font-weight: 700; color: #1a1a2e;
+                         border-bottom: 1px solid #eee; padding-bottom: 6px;
+                         margin: 24px 0 10px; }}
+    .briefing-body p {{ font-size: 0.925rem; color: #333; margin: 6px 0; line-height: 1.65; }}
+    .briefing-list {{ margin: 8px 0 8px 20px; }}
+    .briefing-list li {{ font-size: 0.9rem; color: #444; margin-bottom: 8px; line-height: 1.55; }}
+
+    /* Article list */
     .controls {{ padding: 16px 32px; background: #fff; border-bottom: 1px solid #ddd;
-                 display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }}
+                 display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+                 margin-top: 24px; }}
     .controls label {{ font-size: 0.85rem; color: #666; }}
     .controls input[type=range] {{ width: 160px; }}
     #threshold-val {{ font-weight: bold; color: #1a1a2e; }}
-    main {{ max-width: 900px; margin: 24px auto; padding: 0 16px; }}
+    .section-title {{ max-width: 900px; margin: 24px auto 8px; padding: 0 16px;
+                      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+                      letter-spacing: .08em; color: #888; }}
+    main {{ max-width: 900px; margin: 0 auto 24px; padding: 0 16px; }}
     .card {{ background: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px;
              box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: box-shadow 0.15s; }}
     .card:hover {{ box-shadow: 0 3px 12px rgba(0,0,0,0.12); }}
@@ -283,12 +399,14 @@ def generate_dashboard(
       </div>
       <div class="stat">
         <div class="stat-num">{in_digest}</div>
-        <div class="stat-label">In email digest</div>
+        <div class="stat-label">In digest</div>
       </div>
     </div>
   </header>
+  {briefing_section}
 
-  <div class="controls">
+  <div class="section-title">All Articles</div>
+  <div class="controls" style="margin-top:0">
     <label>
       Min relevance:
       <input type="range" id="threshold" min="0" max="100" value="0"
@@ -302,7 +420,7 @@ def generate_dashboard(
   </main>
 
   <footer>
-    ai-pm-digest &middot; Powered by sentence-transformers all-MiniLM-L6-v2
+    ai-pm-digest &middot; Claude + sentence-transformers all-MiniLM-L6-v2
   </footer>
 
   <script>

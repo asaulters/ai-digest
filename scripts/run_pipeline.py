@@ -14,6 +14,7 @@ import sys
 import traceback
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from typing import Optional
 
 import yaml
 
@@ -25,6 +26,7 @@ from filter import filter_articles
 from store import init_db, get_connection, upsert_article, mark_included, \
     get_articles_since, get_recent_articles_for_dashboard, log_run, already_seen
 from deliver import send_email, send_error_email, generate_dashboard
+from summarize import generate_briefing
 
 CONFIG_DIR = Path(__file__).parent.parent / "config"
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -62,6 +64,15 @@ def run(dry_run: bool = False, no_email: bool = False) -> None:
     logger.info("=" * 60)
     logger.info("AI PM Digest pipeline starting  (dry_run=%s)", dry_run)
     logger.info("=" * 60)
+
+    # --- Preflight checks ---
+    summ_cfg = settings.get("summarization", {})
+    if summ_cfg.get("enabled", True) and not os.environ.get("ANTHROPIC_API_KEY"):
+        logger.error(
+            "ANTHROPIC_API_KEY is not set. "
+            "Set the environment variable or disable summarization in settings.yaml."
+        )
+        sys.exit(1)
 
     digest_cfg = settings.get("digest", {})
     embed_cfg = settings.get("embedding", {})
@@ -119,8 +130,25 @@ def run(dry_run: bool = False, no_email: bool = False) -> None:
 
         logger.info("Stored %d articles.", len(kept) + len(rejected))
 
+        # --- Summarize ---
+        logger.info("Step 4/5: Generating AI briefing...")
+        kept_dicts = [dict(a) for a in kept]
+        briefing: Optional[str] = None
+        if kept_dicts:
+            briefing = generate_briefing(kept_dicts)
+            if briefing:
+                logger.info("Briefing generated (%d chars).", len(briefing))
+            else:
+                fallback = summ_cfg.get("fallback_to_raw", True)
+                if fallback:
+                    logger.warning("Briefing failed — falling back to raw article list.")
+                else:
+                    raise RuntimeError("Briefing generation failed and fallback_to_raw is False.")
+        else:
+            logger.info("No new articles — skipping summarization.")
+
         # --- Deliver ---
-        logger.info("Step 4/4: Delivering digest...")
+        logger.info("Step 5/5: Delivering digest...")
 
         # Pull from DB for dashboard (includes historical articles)
         dash_articles = get_recent_articles_for_dashboard(
@@ -130,7 +158,7 @@ def run(dry_run: bool = False, no_email: bool = False) -> None:
         # Convert Row objects to dicts
         dash_dicts = [dict(row) for row in dash_articles]
 
-        dash_path = generate_dashboard(dash_dicts)
+        dash_path = generate_dashboard(dash_dicts, briefing=briefing)
         dashboard_updated = True
         logger.info("Dashboard generated: %s", dash_path)
 
@@ -139,10 +167,8 @@ def run(dry_run: bool = False, no_email: bool = False) -> None:
         elif no_email:
             logger.info("--no-email: skipping email delivery.")
         else:
-            # For email, use only the freshly kept articles
-            kept_dicts = [dict(a) for a in kept]
             if kept_dicts:
-                email_sent = send_email(kept_dicts)
+                email_sent = send_email(kept_dicts, briefing=briefing)
             else:
                 logger.info("No new articles to send — skipping email.")
 

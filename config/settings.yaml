@@ -22,6 +22,14 @@ dashboard:
   title: "AI PM Daily Digest"
   max_display_articles: 50
 
+summarization:
+  enabled: true
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 2000
+  # If the Claude API call fails, fall back to rendering the raw article list
+  # in both email and dashboard rather than failing the whole pipeline.
+  fallback_to_raw: true
+
 logging:
   level: "INFO"
   # Log file path relative to project root. Set to null to log stdout only.
