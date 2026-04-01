@@ -118,7 +118,33 @@ rss_feeds:
   - name: "Superhuman AI Newsletter"
     url: "https://www.superhuman.ai/rss"
     category: "ai"  
+  - name: "One Useful Thing (Ethan Mollick)"
+    url: "https://www.oneusefulthing.org/feed"
+    category: "ai-work"
 
+  - name: "Chain of Thought (Dan Shipper)"
+    url: "https://every.to/chain-of-thought/feed"
+    category: "ai-work"
+
+  - name: "The AI-Powered Project Manager"
+    url: "https://chrispm.substack.com/feed"
+    category: "ai-pm"
+
+  - name: "AI and Project Management Newsletter"
+    url: "https://alcides.substack.com/feed"
+    category: "ai-pm"
+
+  - name: "The Modern Day Leader - AI and PM"
+    url: "https://emmanuels.substack.com/feed"
+    category: "ai-pm"
+
+  - name: "Lenny's Newsletter"
+    url: "https://www.lennysnewsletter.com/feed"
+    category: "ai-pm"
+
+  - name: "The Pragmatic Engineer"
+    url: "https://www.pragmaticengineer.com/rss"
+    category: "ai-work"
 # Algolia HN API searches (fetched via httpx, not feedparser)
 hacker_news_algolia:
   enabled: true
@@ -143,5 +169,6 @@ hacker_news_algolia:
     - "product management tools"
     - "AI knowledge management"
     - "show HN AI productivity"
+    
   min_points: 30
   lookback_hours: 72

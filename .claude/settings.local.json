@@ -4,7 +4,14 @@
       "Bash(pip install:*)",
       "Bash(python scripts/run_pipeline.py --dry-run)",
       "Bash(python3 scripts/run_pipeline.py --dry-run)",
-      "Bash(pip show:*)"
+      "Bash(pip show:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Skill(claude-api)",
+      "Skill(claude-api:*)",
+      "Bash(python3 scripts/summarize.py)",
+      "Bash(git pull:*)"
     ]
   }
 }
