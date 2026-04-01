@@ -113,16 +113,16 @@ def get_articles_since(
 
 
 def get_recent_articles_for_dashboard(
-    conn: sqlite3.Connection, limit: int = 50
+    conn: sqlite3.Connection, limit: int = 50, min_score: float = 0.0
 ) -> list[sqlite3.Row]:
     return conn.execute(
         """
         SELECT * FROM articles
-        WHERE score IS NOT NULL
+        WHERE score >= ?
         ORDER BY fetched_at DESC, score DESC
         LIMIT ?
         """,
-        (limit,),
+        (min_score, limit),
     ).fetchall()
 
 

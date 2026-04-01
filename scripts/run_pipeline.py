@@ -154,6 +154,7 @@ def run(dry_run: bool = False, no_email: bool = False) -> None:
         dash_articles = get_recent_articles_for_dashboard(
             conn,
             limit=settings.get("dashboard", {}).get("max_display_articles", 50),
+            min_score=threshold,
         )
         # Convert Row objects to dicts
         dash_dicts = [dict(row) for row in dash_articles]
