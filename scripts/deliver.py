@@ -223,33 +223,47 @@ def _score_bar(score: float) -> str:
 
 
 def _article_card(a: dict, idx: int) -> str:
+    import html as html_mod
     score = a.get("score", 0)
     pub = a.get("published", "")
+    pub_display = ""
     if pub:
         try:
-            pub = datetime.fromisoformat(pub).strftime("%b %d, %Y")
+            pub_display = datetime.fromisoformat(pub).strftime("%b %d, %Y")
         except Exception:
-            pub = pub[:10]
+            pub_display = pub[:10]
 
     summary_html = ""
-    if a.get("summary"):
-        trunc = a["summary"][:300]
-        if len(a["summary"]) > 300:
+    summary_text = (a.get("summary") or "")
+    if summary_text:
+        trunc = summary_text[:300]
+        if len(summary_text) > 300:
             trunc += "…"
         summary_html = f'<p class="summary">{trunc}</p>'
 
     included_badge = '<span class="badge included">In digest</span>' if a.get("included") else ""
 
+    # JSON payload for save — escape for embedding in a data attribute
+    save_data = html_mod.escape(json.dumps({
+        "url": a.get("url", ""),
+        "title": a.get("title", ""),
+        "source": a.get("source_name", ""),
+        "score": score,
+        "summary": summary_text[:300],
+        "published": pub_display,
+    }, ensure_ascii=False), quote=True)
+
     return f"""
-    <article class="card" data-score="{score}">
+    <article class="card" data-score="{score}" data-url="{html_mod.escape(a.get('url',''), quote=True)}">
       <div class="card-meta">
         <span class="source">{a.get('source_name','')}</span>
-        {f'<span class="pubdate">{pub}</span>' if pub else ''}
+        {f'<span class="pubdate">{pub_display}</span>' if pub_display else ''}
         <span class="score-bar">{_score_bar(score)}</span>
         {included_badge}
+        <button class="save-btn" data-article="{save_data}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="{a['url']}" target="_blank" rel="noopener">{a['title']}</a>
+        <a href="{a.get('url','')}" target="_blank" rel="noopener">{a.get('title','')}</a>
       </h3>
       {summary_html}
     </article>"""
@@ -384,12 +398,21 @@ def generate_dashboard(
                       font-weight: 600; line-height: 1.35; }}
     .card-title a:hover {{ color: #1565c0; text-decoration: underline; }}
     .summary {{ color: #555; font-size: 0.875rem; margin-top: 6px; }}
+    .save-btn {{ background: none; border: none; cursor: pointer; font-size: 1.1rem;
+                 color: #ccc; padding: 0 2px; line-height: 1; transition: color 0.15s; }}
+    .save-btn:hover {{ color: #f59e0b; }}
+    .save-btn.saved {{ color: #f59e0b; }}
     .hidden {{ display: none !important; }}
     footer {{ text-align: center; padding: 32px; font-size: 0.8rem; color: #aaa; }}
+    .nav-link {{ float: right; color: #fff; opacity: 0.8; font-size: 0.85rem;
+                 text-decoration: none; border: 1px solid rgba(255,255,255,0.3);
+                 padding: 4px 12px; border-radius: 4px; }}
+    .nav-link:hover {{ opacity: 1; background: rgba(255,255,255,0.1); }}
   </style>
 </head>
 <body>
   <header>
+    <a href="saved.html" class="nav-link">&#9733; Saved Articles</a>
     <h1>{title}</h1>
     <div class="meta">Updated {run_date}</div>
     <div class="stats">
@@ -424,6 +447,40 @@ def generate_dashboard(
   </footer>
 
   <script>
+    const STORAGE_KEY = 'aipm_saved_articles';
+
+    function getSaved() {{
+      try {{ return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{{}}'); }}
+      catch {{ return {{}}; }}
+    }}
+
+    function toggleSave(btn) {{
+      const article = JSON.parse(btn.dataset.article);
+      const saved = getSaved();
+      if (saved[article.url]) {{
+        delete saved[article.url];
+        btn.classList.remove('saved');
+        btn.title = 'Save article';
+      }} else {{
+        article.savedAt = new Date().toISOString();
+        saved[article.url] = article;
+        btn.classList.add('saved');
+        btn.title = 'Saved';
+      }}
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+    }}
+
+    function restoreSaveStates() {{
+      const saved = getSaved();
+      document.querySelectorAll('.save-btn').forEach(btn => {{
+        const article = JSON.parse(btn.dataset.article);
+        if (saved[article.url]) {{
+          btn.classList.add('saved');
+          btn.title = 'Saved';
+        }}
+      }});
+    }}
+
     function filterCards(val) {{
       document.getElementById('threshold-val').textContent = val + '%';
       const threshold = parseInt(val) / 100;
@@ -432,6 +489,8 @@ def generate_dashboard(
         card.classList.toggle('hidden', score < threshold);
       }});
     }}
+
+    restoreSaveStates();
   </script>
 </body>
 </html>"""

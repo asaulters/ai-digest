@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Articles — AI PM Digest</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+           background: #f5f5f5; color: #222; line-height: 1.5; }
+    header { background: #1a1a2e; color: #fff; padding: 24px 32px; }
+    header h1 { font-size: 1.6rem; font-weight: 700; }
+    header .meta { font-size: 0.85rem; color: #aaa; margin-top: 4px; }
+    .nav-link { float: right; color: #fff; opacity: 0.8; font-size: 0.85rem;
+                text-decoration: none; border: 1px solid rgba(255,255,255,0.3);
+                padding: 4px 12px; border-radius: 4px; }
+    .nav-link:hover { opacity: 1; background: rgba(255,255,255,0.1); }
+    main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+    .empty { text-align: center; padding: 64px 16px; color: #888; font-size: 1rem; }
+    .empty a { color: #1565c0; text-decoration: none; }
+    .date-group { margin-bottom: 32px; }
+    .date-heading { font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+                    letter-spacing: .08em; color: #888; margin-bottom: 10px; }
+    .card { background: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .card-meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+                 font-size: 0.78rem; color: #888; margin-bottom: 6px; }
+    .source { background: #e8f4fd; color: #1565c0; padding: 2px 8px; border-radius: 12px;
+              font-weight: 500; }
+    .pubdate { color: #aaa; }
+    .score { font-size: 0.75rem; color: #888; }
+    .remove-btn { margin-left: auto; background: none; border: none; cursor: pointer;
+                  font-size: 0.8rem; color: #bbb; padding: 2px 6px; border-radius: 4px;
+                  transition: color 0.15s, background 0.15s; }
+    .remove-btn:hover { color: #e53e3e; background: #fff5f5; }
+    .card-title a { color: #1a1a2e; text-decoration: none; font-size: 1.05rem;
+                    font-weight: 600; line-height: 1.35; }
+    .card-title a:hover { color: #1565c0; text-decoration: underline; }
+    .summary { color: #555; font-size: 0.875rem; margin-top: 6px; }
+    footer { text-align: center; padding: 32px; font-size: 0.8rem; color: #aaa; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="nav-link">&larr; Back to Digest</a>
+    <h1>&#9733; Saved Articles</h1>
+    <div class="meta" id="header-meta">Loading…</div>
+  </header>
+
+  <main id="content">
+    <div class="empty" id="empty-state" style="display:none">
+      No saved articles yet.<br><br>
+      <a href="index.html">Go to the digest</a> and click &#9733; on any article to save it.
+    </div>
+  </main>
+
+  <footer>ai-pm-digest</footer>
+
+  <script>
+    const STORAGE_KEY = 'aipm_saved_articles';
+
+    function getSaved() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+      catch { return {}; }
+    }
+
+    function removeArticle(url) {
+      const saved = getSaved();
+      delete saved[url];
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+      render();
+    }
+
+    function formatDate(isoString) {
+      try {
+        return new Date(isoString).toLocaleDateString('en-US', {
+          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+      } catch { return isoString.slice(0, 10); }
+    }
+
+    function groupByDate(articles) {
+      const groups = {};
+      articles.forEach(a => {
+        const day = a.savedAt ? a.savedAt.slice(0, 10) : 'Unknown';
+        if (!groups[day]) groups[day] = [];
+        groups[day].push(a);
+      });
+      // Sort days descending
+      return Object.entries(groups).sort((a, b) => b[0].localeCompare(a[0]));
+    }
+
+    function render() {
+      const saved = getSaved();
+      const articles = Object.values(saved);
+      const content = document.getElementById('content');
+      const emptyState = document.getElementById('empty-state');
+      const headerMeta = document.getElementById('header-meta');
+
+      // Clear previous cards (keep empty state node)
+      Array.from(content.children).forEach(el => {
+        if (el.id !== 'empty-state') el.remove();
+      });
+
+      if (articles.length === 0) {
+        emptyState.style.display = 'block';
+        headerMeta.textContent = '0 saved articles';
+        return;
+      }
+
+      emptyState.style.display = 'none';
+      headerMeta.textContent = `${articles.length} saved article${articles.length !== 1 ? 's' : ''}`;
+
+      const groups = groupByDate(articles);
+      groups.forEach(([day, dayArticles]) => {
+        const group = document.createElement('div');
+        group.className = 'date-group';
+
+        const heading = document.createElement('div');
+        heading.className = 'date-heading';
+        heading.textContent = formatDate(day + 'T00:00:00');
+        group.appendChild(heading);
+
+        dayArticles.forEach(a => {
+          const card = document.createElement('article');
+          card.className = 'card';
+          const scorePct = Math.round((a.score || 0) * 100);
+          card.innerHTML = `
+            <div class="card-meta">
+              <span class="source">${escHtml(a.source || '')}</span>
+              ${a.published ? `<span class="pubdate">${escHtml(a.published)}</span>` : ''}
+              <span class="score">${scorePct}% relevance</span>
+              <button class="remove-btn" onclick="removeArticle(${JSON.stringify(a.url)})">&#10005; Remove</button>
+            </div>
+            <h3 class="card-title">
+              <a href="${escHtml(a.url)}" target="_blank" rel="noopener">${escHtml(a.title || '')}</a>
+            </h3>
+            ${a.summary ? `<p class="summary">${escHtml(a.summary)}</p>` : ''}`;
+          group.appendChild(card);
+        });
+
+        content.insertBefore(group, emptyState);
+      });
+    }
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    render();
+  </script>
+</body>
+</html>
