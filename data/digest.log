@@ -434,3 +434,148 @@ Notes:
 2026-04-01 15:36:49  INFO      run_pipeline  Dashboard generated: /home/runner/work/ai-digest/ai-digest/dashboard/index.html
 2026-04-01 15:36:49  ERROR     deliver  No RESEND_API_KEY found. Skipping email delivery.
 2026-04-01 15:36:49  INFO      run_pipeline  Pipeline complete. Fetched=41 Kept=1 EmailSent=False
+2026-04-01 16:16:47  INFO      run_pipeline  ============================================================
+2026-04-01 16:16:47  INFO      run_pipeline  AI PM Digest pipeline starting  (dry_run=False)
+2026-04-01 16:16:47  INFO      run_pipeline  ============================================================
+2026-04-01 16:16:47  INFO      store  Database initialised at /home/runner/work/ai-digest/ai-digest/data/digest.db
+2026-04-01 16:16:47  INFO      run_pipeline  Step 1/4: Scraping sources...
+2026-04-01 16:16:47  INFO      scrape  Fetching 30 RSS feeds...
+2026-04-01 16:16:48  INFO      scrape    The Pragmatic Engineer: 1 articles
+2026-04-01 16:16:48  INFO      scrape    Simon Willison's Weblog: 14 articles
+2026-04-01 16:16:49  INFO      scrape    LangChain Blog: 1 articles
+2026-04-01 16:16:50  INFO      scrape    OpenAI Blog: 2 articles
+2026-04-01 16:16:53  WARNING   scrape  Feed parse warning for https://www.anthropic.com/rss.xml: <unknown>:2:3549: not well-formed (invalid token)
+2026-04-01 16:16:53  INFO      scrape    Anthropic News: 0 articles
+2026-04-01 16:16:54  INFO      scrape    Lenny's Newsletter: 2 articles
+2026-04-01 16:16:54  WARNING   scrape  Feed parse warning for https://aisnakeoil.substack.com/feed: <unknown>:2:751: not well-formed (invalid token)
+2026-04-01 16:16:54  INFO      scrape    AI Snake Oil: 0 articles
+2026-04-01 16:16:55  INFO      scrape    Chain of Thought (every.to): 0 articles
+2026-04-01 16:16:55  INFO      scrape    MIT Technology Review - AI: 5 articles
+2026-04-01 16:16:55  INFO      scrape    Towards Data Science: 7 articles
+2026-04-01 16:16:55  INFO      scrape    Superhuman Blog: 0 articles
+2026-04-01 16:16:56  WARNING   scrape  Feed parse warning for https://www.notion.so/blog/rss.xml: <unknown>:8:37: not well-formed (invalid token)
+2026-04-01 16:16:56  INFO      scrape    Notion Blog: 0 articles
+2026-04-01 16:16:57  WARNING   scrape  Feed parse warning for https://linear.app/blog/rss: text/html; charset=utf-8 is not an XML media type
+2026-04-01 16:16:57  INFO      scrape    Linear Blog: 0 articles
+2026-04-01 16:16:57  WARNING   scrape  Feed parse warning for https://www.aha.io/blog/rss: <unknown>:23:0: junk after document element
+2026-04-01 16:16:57  INFO      scrape    Aha! Blog: 0 articles
+2026-04-01 16:16:57  INFO      scrape    ProductPlan Blog: 0 articles
+2026-04-01 16:16:58  INFO      scrape    Atlassian Blog: 2 articles
+2026-04-01 16:16:59  WARNING   scrape  Feed parse warning for https://blog.asana.com/feed/: <unknown>:9:579: not well-formed (invalid token)
+2026-04-01 16:16:59  INFO      scrape    Asana Blog: 0 articles
+2026-04-01 16:17:00  WARNING   scrape  Feed parse warning for https://monday.com/blog/feed/: <unknown>:42:27: not well-formed (invalid token)
+2026-04-01 16:17:00  INFO      scrape    Monday.com Blog: 0 articles
+2026-04-01 16:17:00  WARNING   scrape  Feed parse warning for https://bensbites.beehiiv.com/feed: <unknown>:2:0: syntax error
+2026-04-01 16:17:00  INFO      scrape    Ben's Bites: 0 articles
+2026-04-01 16:17:01  WARNING   scrape  Feed parse warning for https://tldr.tech/ai/rss: text/html; charset=utf-8 is not an XML media type
+2026-04-01 16:17:01  INFO      scrape    TLDR AI: 0 articles
+2026-04-01 16:17:01  WARNING   scrape  Feed parse warning for https://www.therundown.ai/rss: <unknown>:99:130894: not well-formed (invalid token)
+2026-04-01 16:17:01  INFO      scrape    The Rundown AI: 0 articles
+2026-04-01 16:17:01  WARNING   scrape  Feed parse warning for https://aiforwork.substack.com/feed: <unknown>:2:751: not well-formed (invalid token)
+2026-04-01 16:17:01  INFO      scrape    AI for Work: 0 articles
+2026-04-01 16:17:02  INFO      scrape    Wes Kao's Newsletter: 1 articles
+2026-04-01 16:17:02  INFO      scrape    Product Talk: 2 articles
+2026-04-01 16:17:03  INFO      scrape    Intercom Blog: 0 articles
+2026-04-01 16:17:04  WARNING   scrape  Feed parse warning for https://www.mindtheproduct.com/feed/: <unknown>:2:0: not well-formed (invalid token)
+2026-04-01 16:17:04  INFO      scrape    Mind the Product: 0 articles
+2026-04-01 16:17:04  WARNING   scrape  Feed parse warning for https://www.productboard.com/blog/feed/: text/html; charset=utf-8 is not an XML media type
+2026-04-01 16:17:04  INFO      scrape    Productboard Blog: 0 articles
+2026-04-01 16:17:05  WARNING   scrape  Feed parse warning for https://amplitude.com/blog/feed: text/html; charset=utf-8 is not an XML media type
+2026-04-01 16:17:05  INFO      scrape    Amplitude Blog: 0 articles
+2026-04-01 16:17:05  WARNING   scrape  Feed parse warning for https://www.reforge.com/blog/rss: <unknown>:255:129: not well-formed (invalid token)
+2026-04-01 16:17:05  INFO      scrape    Reforge Blog: 0 articles
+2026-04-01 16:17:06  WARNING   scrape  Feed parse warning for https://www.superhuman.ai/rss: <unknown>:109:918: not well-formed (invalid token)
+2026-04-01 16:17:06  INFO      scrape    Superhuman AI Newsletter: 0 articles
+2026-04-01 16:17:06  INFO      scrape  Fetching HN Algolia...
+2026-04-01 16:17:06  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+project+management&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:06  INFO      scrape    HN Algolia 'AI project management': 1 hits
+2026-04-01 16:17:07  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=LLM+productivity&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:07  INFO      scrape    HN Algolia 'LLM productivity': 0 hits
+2026-04-01 16:17:08  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+product+manager&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:08  INFO      scrape    HN Algolia 'AI product manager': 1 hits
+2026-04-01 16:17:08  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=agentic+workflow&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:08  INFO      scrape    HN Algolia 'agentic workflow': 1 hits
+2026-04-01 16:17:09  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+tools&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:09  INFO      scrape    HN Algolia 'AI tools': 2 hits
+2026-04-01 16:17:09  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=LLM+workflow&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:09  INFO      scrape    HN Algolia 'LLM workflow': 0 hits
+2026-04-01 16:17:10  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+roadmap&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:10  INFO      scrape    HN Algolia 'AI roadmap': 0 hits
+2026-04-01 16:17:10  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+tools+for+teams&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:10  INFO      scrape    HN Algolia 'AI tools for teams': 1 hits
+2026-04-01 16:17:11  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=Claude+Code+productivity&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:11  INFO      scrape    HN Algolia 'Claude Code productivity': 0 hits
+2026-04-01 16:17:11  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+sprint+planning&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:11  INFO      scrape    HN Algolia 'AI sprint planning': 0 hits
+2026-04-01 16:17:12  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=copilot+for+PM&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:12  INFO      scrape    HN Algolia 'copilot for PM': 0 hits
+2026-04-01 16:17:12  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+automation+workflow&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:12  INFO      scrape    HN Algolia 'AI automation workflow': 0 hits
+2026-04-01 16:17:13  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+product+management&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:13  INFO      scrape    HN Algolia 'AI product management': 1 hits
+2026-04-01 16:17:13  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=prompt+engineering+workflow&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:13  INFO      scrape    HN Algolia 'prompt engineering workflow': 0 hits
+2026-04-01 16:17:14  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+assistant+productivity&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:14  INFO      scrape    HN Algolia 'AI assistant productivity': 0 hits
+2026-04-01 16:17:14  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=LLM+agent&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:14  INFO      scrape    HN Algolia 'LLM agent': 1 hits
+2026-04-01 16:17:15  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+task+management&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:15  INFO      scrape    HN Algolia 'AI task management': 1 hits
+2026-04-01 16:17:15  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=product+management+tools&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:15  INFO      scrape    HN Algolia 'product management tools': 1 hits
+2026-04-01 16:17:16  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=AI+knowledge+management&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:16  INFO      scrape    HN Algolia 'AI knowledge management': 0 hits
+2026-04-01 16:17:16  INFO      httpx  HTTP Request: GET https://hn.algolia.com/api/v1/search?query=show+HN+AI+productivity&tags=story&numericFilters=points%3E%3D30%2Ccreated_at_i%3E1774887426&hitsPerPage=20 "HTTP/1.1 200 OK"
+2026-04-01 16:17:16  INFO      scrape    HN Algolia 'show HN AI productivity': 0 hits
+2026-04-01 16:17:17  INFO      scrape  Total raw articles fetched: 40
+2026-04-01 16:17:17  INFO      run_pipeline  New articles (not in DB): 1
+2026-04-01 16:17:17  INFO      run_pipeline  Step 2/4: Filtering with embeddings...
+2026-04-01 16:17:21  INFO      filter  Loading embedding model 'all-MiniLM-L6-v2'...
+2026-04-01 16:17:21  INFO      sentence_transformers.SentenceTransformer  Use pytorch device_name: cpu
+2026-04-01 16:17:21  INFO      sentence_transformers.SentenceTransformer  Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:21  WARNING   huggingface_hub.utils._http  Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:21  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:21  WARNING   transformers.modeling_utils  [1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-04-01 16:17:22  INFO      httpx  HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-04-01 16:17:22  INFO      filter  Model loaded.
+2026-04-01 16:17:22  INFO      filter  Building topic centroid from 9 topic lines...
+2026-04-01 16:17:22  INFO      filter  Embedding 1 articles...
+2026-04-01 16:17:22  INFO      filter  Scored 1 articles. 0 above threshold 0.50.
+2026-04-01 16:17:22  INFO      filter  Kept: 0  Rejected: 1
+2026-04-01 16:17:22  INFO      run_pipeline  Step 3/4: Storing results...
+2026-04-01 16:17:22  INFO      run_pipeline  Stored 1 articles.
+2026-04-01 16:17:22  INFO      run_pipeline  Step 4/5: Generating AI briefing...
+2026-04-01 16:17:22  INFO      run_pipeline  No new articles — skipping summarization.
+2026-04-01 16:17:22  INFO      run_pipeline  Step 5/5: Delivering digest...
+2026-04-01 16:17:22  INFO      deliver  Dashboard written to /home/runner/work/ai-digest/ai-digest/dashboard/index.html (50 articles)
+2026-04-01 16:17:22  INFO      run_pipeline  Dashboard generated: /home/runner/work/ai-digest/ai-digest/dashboard/index.html
+2026-04-01 16:17:22  INFO      run_pipeline  No new articles to send — skipping email.
+2026-04-01 16:17:22  INFO      run_pipeline  Pipeline complete. Fetched=40 Kept=0 EmailSent=False

@@ -15,12 +15,34 @@
     .stat { background: rgba(255,255,255,0.1); border-radius: 6px; padding: 8px 16px; }
     .stat-num { font-size: 1.4rem; font-weight: 700; }
     .stat-label { font-size: 0.75rem; color: #ccc; }
+
+    /* Briefing panel */
+    .briefing-panel { max-width: 900px; margin: 24px auto 0; padding: 0 16px; }
+    .briefing-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+                       letter-spacing: .08em; color: #888; margin-bottom: 4px; }
+    .briefing-body { background: #fff; border-radius: 10px; padding: 28px 32px;
+                      box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .briefing-signal-heading { font-size: 1.1rem; font-weight: 700; color: #1a1a2e;
+                                 border-left: 4px solid #f59e0b; padding-left: 12px;
+                                 margin: 0 0 12px; }
+    .briefing-heading { font-size: 1rem; font-weight: 700; color: #1a1a2e;
+                         border-bottom: 1px solid #eee; padding-bottom: 6px;
+                         margin: 24px 0 10px; }
+    .briefing-body p { font-size: 0.925rem; color: #333; margin: 6px 0; line-height: 1.65; }
+    .briefing-list { margin: 8px 0 8px 20px; }
+    .briefing-list li { font-size: 0.9rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+
+    /* Article list */
     .controls { padding: 16px 32px; background: #fff; border-bottom: 1px solid #ddd;
-                 display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+                 display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+                 margin-top: 24px; }
     .controls label { font-size: 0.85rem; color: #666; }
     .controls input[type=range] { width: 160px; }
     #threshold-val { font-weight: bold; color: #1a1a2e; }
-    main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+    .section-title { max-width: 900px; margin: 24px auto 8px; padding: 0 16px;
+                      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+                      letter-spacing: .08em; color: #888; }
+    main { max-width: 900px; margin: 0 auto 24px; padding: 0 16px; }
     .card { background: #fff; border-radius: 8px; padding: 16px 20px; margin-bottom: 12px;
              box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: box-shadow 0.15s; }
     .card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.12); }
@@ -43,7 +65,7 @@
 <body>
   <header>
     <h1>AI PM Daily Digest</h1>
-    <div class="meta">Updated April 01, 2026 at 15:36 UTC</div>
+    <div class="meta">Updated April 01, 2026 at 16:17 UTC</div>
     <div class="stats">
       <div class="stat">
         <div class="stat-num">50</div>
@@ -51,12 +73,14 @@
       </div>
       <div class="stat">
         <div class="stat-num">5</div>
-        <div class="stat-label">In email digest</div>
+        <div class="stat-label">In digest</div>
       </div>
     </div>
   </header>
+  
 
-  <div class="controls">
+  <div class="section-title">All Articles</div>
+  <div class="controls" style="margin-top:0">
     <label>
       Min relevance:
       <input type="range" id="threshold" min="0" max="100" value="0"
@@ -67,6 +91,19 @@
 
   <main id="articles">
     
+    <article class="card" data-score="0.2147">
+      <div class="card-meta">
+        <span class="source">Hacker News (AI project management)</span>
+        <span class="pubdate">Apr 01, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:21px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="21% relevance"></span> 21%</span>
+        
+      </div>
+      <h3 class="card-title">
+        <a href="https://news.ycombinator.com/item?id=47599303" target="_blank" rel="noopener">Ask HN: Client took over development by vibe coding. What to do?</a>
+      </h3>
+      <p class="summary">HN discussion: Ask HN: Client took over development by vibe coding. What to do?. Points: 33, Comments: 25</p>
+    </article>
+
     <article class="card" data-score="0.1439">
       <div class="card-meta">
         <span class="source">Product Talk</span>
@@ -703,23 +740,10 @@
       </h3>
       <p class="summary">Release: llm-mrchatterbox 0.1 See Mr. Chatterbox is a (weak) Victorian-era ethically trained model you can run on your own computer . Tags: llm</p>
     </article>
-
-    <article class="card" data-score="0.3159">
-      <div class="card-meta">
-        <span class="source">Lenny's Newsletter</span>
-        <span class="pubdate">Mar 30, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:31px;height:8px;background:#e74c3c;border-radius:3px;vertical-align:middle" title="31% relevance"></span> 31%</span>
-        
-      </div>
-      <h3 class="card-title">
-        <a href="https://www.lennysnewsletter.com/p/how-to-turn-claude-code-into-your" target="_blank" rel="noopener">How to turn Claude Code into your personal life operating system | Hilary Gridley</a>
-      </h3>
-      <p class="summary">Watch now | &#127897;&#65039; How a new mom and entrepreneur uses Claude Code to automate life admin&#8212;all without complex setup</p>
-    </article>
   </main>
 
   <footer>
-    ai-pm-digest &middot; Powered by sentence-transformers all-MiniLM-L6-v2
+    ai-pm-digest &middot; Claude + sentence-transformers all-MiniLM-L6-v2
   </footer>
 
   <script>
