@@ -3,3 +3,5 @@ __pycache__/
 *.pyo
 .env
 scripts/__pycache__/
+data/digest.db
+data/digest.log

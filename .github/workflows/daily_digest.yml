@@ -16,10 +16,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: digest-pipeline
-  cancel-in-progress: false
-
 jobs:
   digest:
     runs-on: ubuntu-latest
@@ -54,6 +50,13 @@ jobs:
           restore-keys: |
             sentence-transformers-all-MiniLM-L6-v2-
 
+      - name: Restore database cache
+        uses: actions/cache@v4
+        with:
+          path: data/digest.db
+          key: digest-db-${{ runner.os }}
+          restore-keys: digest-db-
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -79,17 +82,23 @@ jobs:
           fi
           python scripts/run_pipeline.py $DRY_RUN_FLAG
 
-      - name: Commit updated database and dashboard
+      - name: Save database cache
+        if: always()
+        uses: actions/cache@v4
+        with:
+          path: data/digest.db
+          key: digest-db-${{ runner.os }}
+
+      - name: Commit dashboard
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git checkout main
-          git add data/digest.db data/digest.log dashboard/index.html
+          git add dashboard/index.html
           git commit -m "chore: digest update $(date -u '+%Y-%m-%d %H:%M UTC')" || echo "Nothing to commit"
-          git pull origin main --rebase --autostash
-          git push origin main
+          git push origin HEAD:main --force-with-lease
 
       - name: Send error notification on failure
         if: failure()
