@@ -18,6 +18,25 @@ logger = logging.getLogger(__name__)
 CONFIG_DIR = Path(__file__).parent.parent / "config"
 _model = None  # module-level cache so the model loads once per process
 
+# Developer micro-release noise — drop before embedding to save time and quota.
+_EXCLUSION_STRINGS = [
+    "datasette",
+    "llm-echo",
+    "llm-mrchatterbox",
+    "0.1a",
+    "0.2a",
+    "0.3a",
+    "Release:",
+]
+
+# Maximum articles any single source may contribute to the kept list.
+_PER_SOURCE_CAP = 3
+
+
+def _is_excluded(article: dict) -> bool:
+    haystack = f"{article.get('title', '')} {article.get('summary', '')}".lower()
+    return any(excl.lower() in haystack for excl in _EXCLUSION_STRINGS)
+
 
 def _get_model(model_name: str):
     global _model
@@ -106,16 +125,45 @@ def filter_articles(
 ) -> tuple[list[dict], list[dict]]:
     """
     Score and split articles into (kept, rejected).
-    `kept` is capped at max_articles if provided.
+
+    Pipeline:
+      1. Exclusion filter — drop noise articles before embedding.
+      2. Embedding + cosine similarity scoring.
+      3. Threshold filter — drop below threshold.
+      4. Per-source cap — no source contributes more than _PER_SOURCE_CAP articles.
+      5. Global cap — trim to max_articles (highest scoring first).
     """
     settings = _load_settings()
     threshold = threshold if threshold is not None else settings["embedding"]["relevance_threshold"]
     max_articles = max_articles or settings["digest"]["max_articles_per_digest"]
 
-    scored = score_articles(articles, model_name=model_name, threshold=threshold)
-    kept = [a for a in scored if a["score"] >= threshold]
-    rejected = [a for a in scored if a["score"] < threshold]
+    # 1. Exclusion filter
+    excluded = [a for a in articles if _is_excluded(a)]
+    to_score = [a for a in articles if not _is_excluded(a)]
+    if excluded:
+        logger.info("Excluded %d articles by keyword filter.", len(excluded))
 
+    # 2 & 3. Score and threshold
+    scored = score_articles(to_score, model_name=model_name, threshold=threshold)
+    above = [a for a in scored if a["score"] >= threshold]
+    rejected = excluded + [a for a in scored if a["score"] < threshold]
+
+    # 4. Per-source cap (scored descending, so first N per source are best)
+    source_counts: dict[str, int] = {}
+    kept = []
+    for a in above:
+        src = a.get("source_name", "")
+        if source_counts.get(src, 0) < _PER_SOURCE_CAP:
+            kept.append(a)
+            source_counts[src] = source_counts.get(src, 0) + 1
+        else:
+            rejected.append(a)
+
+    capped_sources = [s for s, n in source_counts.items() if n >= _PER_SOURCE_CAP]
+    if capped_sources:
+        logger.info("Per-source cap applied to: %s", ", ".join(capped_sources))
+
+    # 5. Global cap
     if len(kept) > max_articles:
         rejected = kept[max_articles:] + rejected
         kept = kept[:max_articles]

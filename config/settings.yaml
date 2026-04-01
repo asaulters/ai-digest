@@ -3,7 +3,7 @@ embedding:
   # Cosine similarity threshold — articles below this score are dropped.
   # Range: 0.0 (anything passes) to 1.0 (exact match only).
   # 0.35 is a good starting point; raise to 0.40+ to tighten focus.
-  relevance_threshold: 0.50
+  relevance_threshold: 0.40
 
 digest:
   lookback_days: 2
