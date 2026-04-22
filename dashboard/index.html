@@ -74,14 +74,14 @@
   <header>
     <a href="saved.html" class="nav-link">&#9733; Saved Articles</a>
     <h1>AI PM Daily Digest</h1>
-    <div class="meta">Updated April 21, 2026 at 08:29 UTC</div>
+    <div class="meta">Updated April 22, 2026 at 08:26 UTC</div>
     <div class="stats">
       <div class="stat">
-        <div class="stat-num">23</div>
+        <div class="stat-num">27</div>
         <div class="stat-label">Articles</div>
       </div>
       <div class="stat">
-        <div class="stat-num">16</div>
+        <div class="stat-num">19</div>
         <div class="stat-label">In digest</div>
       </div>
     </div>
@@ -92,43 +92,63 @@
     <div class="briefing-body">
       <h2 class="briefing-signal-heading">Today's Signal</h2>
 
-<p>The most significant shift happening today is the operationalization of AI agents within existing business workflows—teams are moving from experimenting with ChatGPT to deploying specialized AI agents directly into their content management systems, project workflows, and even training AI replacements for human roles. This represents a maturation from AI as a side tool to AI as integrated infrastructure, with Chinese tech workers already being asked to train their own AI doubles, signaling how quickly organizations expect AI to become embedded in day-to-day operations.</p>
+<p>AI is moving beyond experimental into production workflows, with companies like Intercom now using AI to approve pull requests in their development pipeline. However, a critical tension is emerging: while AI agents are becoming more capable at specific tasks, they're exhibiting fundamentally human limitations—drifting toward familiar solutions, negotiating with constraints, and lacking the patience for rigorous execution that production systems require.</p>
 
 <h2 class="briefing-heading">Tools & Releases Worth Knowing</h2>
 
-<p><strong>SHIFTLY</strong> - AI-powered growth strategist specifically designed for small teams and builders to automate strategic planning and growth initiatives. This matters because it targets the exact workflow gap many AI PMs face: translating high-level strategy into actionable plans without large consulting teams. <strong>Skill/Action:</strong> Test how AI can structure your quarterly planning process by trying growth strategy automation tools.</p>
+<p><strong>Basedash Automations</strong> — An AI data analyst platform that runs automated analysis workflows continuously in the background.</p>
+<ul class="briefing-list">
+<li>Why it matters: Demonstrates the shift toward "always-on" AI workers for operational tasks that traditionally required manual oversight.</li>
+<li>Skill or action: Explore how continuous AI monitoring could replace periodic manual reporting in your current compliance or project tracking workflows.</li>
+</ul>
 
-<p><strong>Cosmic Agent Marketplace</strong> - AI agents that integrate directly into your existing CMS, allowing teams to deploy specialized AI workers within their content and project management systems. This is significant because it eliminates the context-switching problem of external AI tools. <strong>Skill/Action:</strong> Map your current CMS workflows and identify 2-3 repetitive tasks that could be automated by embedded AI agents.</p>
+<p><strong>Loomal</strong> — Identity infrastructure specifically designed for AI agents to securely authenticate and access systems.</p>
+<ul class="briefing-list">
+<li>Why it matters: As AI agents become more autonomous in workflows, proper identity management becomes critical for enterprise adoption and compliance.</li>
+<li>Skill or action: Research how AI agent authentication differs from traditional user auth—this will be essential knowledge for AI product managers.</li>
+</ul>
 
-<p><strong>Chat Skills for AI Agents</strong> - A development tool that enables working chat functionality for AI agents in under 10 minutes with just one file implementation. This matters because it lowers the technical barrier for AI PMs to prototype conversational interfaces. <strong>Skill/Action:</strong> Learn basic agent communication protocols to better specify requirements when working with technical teams.</p>
+<p><strong>FusedFrames</strong> — A tool focused on capturing and organizing contextual information that AI agents need to operate effectively.</p>
+<ul class="briefing-list">
+<li>Why it matters: Context management is becoming a key bottleneck in AI workflows; this addresses the "AI agents need better information architecture" problem.</li>
+<li>Skill or action: Audit your current project documentation to identify what context an AI agent would need to be useful in your workflows.</li>
+</ul>
 
 <h2 class="briefing-heading">Workflow & Use Case Ideas</h2>
 
-<p><strong>Idea:</strong> Training AI agents on team member expertise and work patterns for knowledge continuity — <strong>Why it matters:</strong> Creates institutional knowledge backup and enables better project handoffs when team members transition.</p>
+<p><strong>Idea: AI-powered pull request approval with safety guardrails</strong> — Why it matters: Shows how to implement AI in critical approval workflows while maintaining quality controls through staging, rollback mechanisms, and human oversight triggers.</p>
 
-<p><strong>Idea:</strong> Embedding AI agents directly into content management systems rather than using external tools — <strong>Why it matters:</strong> Reduces workflow friction and increases adoption by meeting users in their existing work environment.</p>
+<p><strong>Idea: Continuous AI data analysis replacing scheduled reports</strong> — Why it matters: Transforms reactive reporting into proactive monitoring, potentially eliminating the weekly/monthly reporting cycles that consume PM bandwidth.</p>
 
-<p><strong>Idea:</strong> Using AI for strategic growth planning in small teams where dedicated strategy roles don't exist — <strong>Why it matters:</strong> Democratizes strategic planning capabilities for resource-constrained teams.</p>
+<p><strong>Idea: Context capture systems for AI handoffs</strong> — Why it matters: Addresses the biggest practical challenge in AI workflows—ensuring agents have the right information to make decisions without constant human intervention.</p>
 
 <h2 class="briefing-heading">What The Leaders Are Doing</h2>
 
-<p>Chinese tech companies are actively requiring workers to train AI agents to replicate their skills and work patterns, indicating enterprise AI adoption is accelerating beyond pilot programs into operational replacement strategies. Teams are increasingly choosing integrated AI solutions over standalone tools, preferring agents that work within existing CMS and project management platforms rather than requiring separate interfaces. Early adopters are focusing on knowledge distillation and skill replication rather than just task automation, suggesting a shift toward AI that understands context and methodology, not just execution.</p>
+<p>Intercom is pioneering production use of AI in their development workflow by implementing AI pull request approval with careful safety mechanisms including staged rollouts and automatic rollback capabilities. MIT is integrating AI so thoroughly across departments that faculty are finding themselves working with AI tools organically rather than through deliberate adoption programs. The broader pattern shows organizations moving from AI experimentation to embedding AI into core operational processes, but with significant investment in safety and context management infrastructure.</p>
 
 <h2 class="briefing-heading">Skill to Build This Week</h2>
 
-<p><strong>Learn agent integration patterns and CMS embedding techniques.</strong> Based on today's tools, the market is moving toward AI that lives inside existing workflows rather than external assistants. Spend 45 minutes this week exploring how to integrate AI capabilities into existing tools you already use—whether that's your project management platform, documentation system, or CMS. Start by identifying one repetitive task in your current workflow and researching how similar teams have embedded AI agents to handle it, focusing on integration patterns rather than building from scratch.</p>
+<p><strong>Learn prompt engineering for code review and quality assurance workflows.</strong> The Intercom article reveals that AI is now capable enough to handle approval workflows when properly prompted and constrained. This represents a major shift in how we can think about AI in governance and quality control processes. Start by studying how to write prompts that can evaluate work against specific criteria, handle edge cases, and escalate appropriately—skills that translate directly to project management and compliance workflows.</p>
+
+<p><strong>Concrete starting point:</strong> Take one of your current approval or review processes and write three different prompts that could handle 80% of the cases, focusing on clear criteria, escalation triggers, and safety considerations.</p>
 
 <h2 class="briefing-heading">Articles In Full Digest</h2>
 
-<p><strong>SHIFTLY</strong> | Product Hunt Daily | 60% | AI-powered growth strategist tool targeting builders and small teams who need strategic planning support. Represents the trend toward specialized AI tools for specific business functions rather than general-purpose assistants.</p>
+<p><strong>Basedash Automations</strong> — Product Hunt Daily — 57% — AI data analyst platform that runs continuous automated analysis workflows. Represents the shift toward always-on AI workers for operational tasks.</p>
 
-<p><strong>Cosmic Agent Marketplace</strong> | Product Hunt Daily | 59% | Platform for deploying AI agents directly within existing content management systems. Shows the market shift toward integrated AI solutions that work within current workflows rather than requiring separate tools.</p>
+<p><strong>Roundtables: Unveiling The 10 Things That Matter in AI Right Now</strong> — MIT Technology Review - AI — 56% — Live session from EmTech AI conference covering key AI technologies and trends. Provides leadership perspective on current AI priorities and emerging movements.</p>
 
-<p><strong>Chat Skills for AI Agents</strong> | Product Hunt Daily | 56% | Development tool enabling rapid chat implementation for AI agents with minimal technical setup. Indicates lowering barriers for AI PM teams to prototype conversational interfaces and agent interactions.</p>
+<p><strong>Loomal</strong> — Product Hunt Daily — 55% — Identity infrastructure specifically designed for AI agents. Addresses the growing need for secure AI agent authentication in enterprise workflows.</p>
 
-<p><strong>The LLM Gamble</strong> | Towards Data Science | 42% | Analysis of why LLM usage is psychologically compelling and implications for AI industry development. Provides insight into user adoption patterns and potential risks in AI product design.</p>
+<p><strong>FusedFrames</strong> — Product Hunt Daily — 54% — Tool for capturing and organizing contextual information for AI agents. Tackles the critical challenge of context management in AI workflows.</p>
 
-<p><strong>Chinese tech workers training AI doubles</strong> | MIT Technology Review | 42% | Report on Chinese tech workers being required to train AI agents to replicate their skills, causing ethical concerns. Reveals how quickly enterprise AI adoption is moving from assistance to replacement strategies.</p>
+<p><strong>AI is approving our pull requests: Here's how we made it safe</strong> — Intercom Blog — 46% — Detailed case study of implementing AI in production development workflows with safety guardrails. Shows practical approach to AI adoption in critical business processes.</p>
+
+<p><strong>AI at MIT</strong> — MIT Technology Review - AI — 44% — Overview of how AI has become pervasive across MIT departments and research. Illustrates organic AI adoption patterns in complex organizations.</p>
+
+<p><strong>The LLM Gamble</strong> — Towards Data Science — 42% — Analysis of why LLM usage is compelling and its implications for the AI industry. Explores the psychological aspects of human-AI interaction.</p>
+
+<p><strong>Quoting Andreas Påhlsson-Notini</strong> — Simon Willison's Weblog — 42% — Critical observation that AI agents exhibit human-like limitations including lack of focus and tendency to negotiate constraints. Highlights current gaps between AI capabilities and production requirements.</p>
     </div>
   </section>
 
@@ -144,102 +164,116 @@
 
   <main id="articles">
     
-    <article class="card" data-score="0.4096" data-url="https://www.producthunt.com/products/kimi-ai-assistant">
+    <article class="card" data-score="0.4549" data-url="https://www.producthunt.com/products/stet-a-smart-dictation-for-rest-of-us">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Apr 20, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:40px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="40% relevance"></span> 40%</span>
+        <span class="score-bar"><span style="display:inline-block;width:45px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="45% relevance"></span> 45%</span>
         
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/kimi-ai-assistant&quot;, &quot;title&quot;: &quot;Kimi K2.6&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4096, &quot;summary&quot;: &quot;Open-source SOTA for long-horizon coding and agent swarms Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/stet-a-smart-dictation-for-rest-of-us&quot;, &quot;title&quot;: &quot;Stet&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4549, &quot;summary&quot;: &quot;Smart open-source dictation that sounds like you, not AI. Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/kimi-ai-assistant" target="_blank" rel="noopener">Kimi K2.6</a>
+        <a href="https://www.producthunt.com/products/stet-a-smart-dictation-for-rest-of-us" target="_blank" rel="noopener">Stet</a>
       </h3>
-      <p class="summary">Open-source SOTA for long-horizon coding and agent swarms Discussion | Link</p>
+      <p class="summary">Smart open-source dictation that sounds like you, not AI. Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4667" data-url="https://www.producthunt.com/products/delegare">
+    <article class="card" data-score="0.4608" data-url="https://www.producthunt.com/products/seeknal">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">Apr 19, 2026</span>
+        <span class="pubdate">Apr 21, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:46px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="46% relevance"></span> 46%</span>
         
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/delegare&quot;, &quot;title&quot;: &quot;delegare&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4667, &quot;summary&quot;: &quot;Give AI agents spending power without giving up control Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 19, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/seeknal&quot;, &quot;title&quot;: &quot;Seeknal&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4608, &quot;summary&quot;: &quot;Data &amp; AI/ML CLI for pipelines and NL queries Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/delegare" target="_blank" rel="noopener">delegare</a>
+        <a href="https://www.producthunt.com/products/seeknal" target="_blank" rel="noopener">Seeknal</a>
       </h3>
-      <p class="summary">Give AI agents spending power without giving up control Discussion | Link</p>
+      <p class="summary">Data & AI/ML CLI for pipelines and NL queries Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4752" data-url="https://www.producthunt.com/products/maxia-oracle">
+    <article class="card" data-score="0.468" data-url="https://www.producthunt.com/products/stanley-for-x">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Apr 20, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:46px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="46% relevance"></span> 46%</span>
+        
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/stanley-for-x&quot;, &quot;title&quot;: &quot;Stanley For 𝕏&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.468, &quot;summary&quot;: &quot;The World&#x27;s First AI Head of Content Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.producthunt.com/products/stanley-for-x" target="_blank" rel="noopener">Stanley For 𝕏</a>
+      </h3>
+      <p class="summary">The World's First AI Head of Content Discussion | Link</p>
+    </article>
+
+    <article class="card" data-score="0.4688" data-url="https://www.producthunt.com/products/vibearound">
+      <div class="card-meta">
+        <span class="source">Product Hunt Daily</span>
+        <span class="pubdate">Apr 21, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:46px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="46% relevance"></span> 46%</span>
+        
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/vibearound&quot;, &quot;title&quot;: &quot;VibeAround&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4688, &quot;summary&quot;: &quot;Chat with your local AI coding agent from any IM or browser Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.producthunt.com/products/vibearound" target="_blank" rel="noopener">VibeAround</a>
+      </h3>
+      <p class="summary">Chat with your local AI coding agent from any IM or browser Discussion | Link</p>
+    </article>
+
+    <article class="card" data-score="0.4702" data-url="https://www.producthunt.com/products/iris-studio">
+      <div class="card-meta">
+        <span class="source">Product Hunt Daily</span>
+        <span class="pubdate">Apr 21, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:47px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="47% relevance"></span> 47%</span>
         
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/maxia-oracle&quot;, &quot;title&quot;: &quot;MAXIA Oracle&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4752, &quot;summary&quot;: &quot;Multi-source price feed for AI agents Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/iris-studio&quot;, &quot;title&quot;: &quot;Iris Studio&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4702, &quot;summary&quot;: &quot;The Swiss Army Knife for AI &amp; Video Creators Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/maxia-oracle" target="_blank" rel="noopener">MAXIA Oracle</a>
+        <a href="https://www.producthunt.com/products/iris-studio" target="_blank" rel="noopener">Iris Studio</a>
       </h3>
-      <p class="summary">Multi-source price feed for AI agents Discussion | Link</p>
+      <p class="summary">The Swiss Army Knife for AI & Video Creators Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4834" data-url="https://www.producthunt.com/products/fabi">
+    <article class="card" data-score="0.4762" data-url="https://www.producthunt.com/products/ml-intern">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Apr 21, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:48px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="48% relevance"></span> 48%</span>
+        <span class="score-bar"><span style="display:inline-block;width:47px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="47% relevance"></span> 47%</span>
         
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/fabi&quot;, &quot;title&quot;: &quot;Fabi&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4834, &quot;summary&quot;: &quot;Cloud agent to build internal apps and automate workflows Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/ml-intern&quot;, &quot;title&quot;: &quot;ml-intern&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4762, &quot;summary&quot;: &quot;Hugging Face&#x27;s AI agent that automates post-training Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/fabi" target="_blank" rel="noopener">Fabi</a>
+        <a href="https://www.producthunt.com/products/ml-intern" target="_blank" rel="noopener">ml-intern</a>
       </h3>
-      <p class="summary">Cloud agent to build internal apps and automate workflows Discussion | Link</p>
+      <p class="summary">Hugging Face's AI agent that automates post-training Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4849" data-url="https://www.producthunt.com/products/twenty-crm">
-      <div class="card-meta">
-        <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">Apr 20, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:48px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="48% relevance"></span> 48%</span>
-        
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/twenty-crm&quot;, &quot;title&quot;: &quot;Twenty 2.0&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4849, &quot;summary&quot;: &quot;Build your Enterprise CRM at AI Speed Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
-      </div>
-      <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/twenty-crm" target="_blank" rel="noopener">Twenty 2.0</a>
-      </h3>
-      <p class="summary">Build your Enterprise CRM at AI Speed Discussion | Link</p>
-    </article>
-
-    <article class="card" data-score="0.4933" data-url="https://www.producthunt.com/products/x-isiand">
+    <article class="card" data-score="0.5093" data-url="https://www.producthunt.com/products/android-studio-panda-4">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
         <span class="pubdate">Apr 21, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:49px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="49% relevance"></span> 49%</span>
+        <span class="score-bar"><span style="display:inline-block;width:50px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="50% relevance"></span> 50%</span>
         
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/x-isiand&quot;, &quot;title&quot;: &quot;X Island&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4933, &quot;summary&quot;: &quot;Dynamic Island for AI Coding Agents Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/android-studio-panda-4&quot;, &quot;title&quot;: &quot;Android Studio Panda 4&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.5093, &quot;summary&quot;: &quot;AI agent IDE for Android with planning and edit prediction Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/x-isiand" target="_blank" rel="noopener">X Island</a>
+        <a href="https://www.producthunt.com/products/android-studio-panda-4" target="_blank" rel="noopener">Android Studio Panda 4</a>
       </h3>
-      <p class="summary">Dynamic Island for AI Coding Agents Discussion | Link</p>
+      <p class="summary">AI agent IDE for Android with planning and edit prediction Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.4262" data-url="https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/">
+    <article class="card" data-score="0.4246" data-url="https://simonwillison.net/2026/Apr/21/andreas-pahlsson-notini/#atom-everything">
       <div class="card-meta">
-        <span class="source">MIT Technology Review - AI</span>
-        <span class="pubdate">Apr 20, 2026</span>
+        <span class="source">Simon Willison's Weblog</span>
+        <span class="pubdate">Apr 21, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:42px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="42% relevance"></span> 42%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/&quot;, &quot;title&quot;: &quot;Chinese tech workers are starting to train their AI doubles–and pushing back&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.4262, &quot;summary&quot;: &quot;Tech workers in China are being instructed by their bosses to train AI agents to replace them—and it’s prompting a wave of soul-searching among otherwise enthusiastic early adopters.&amp;#160; Earlier this month a GitHub project called Colleague Skill, which claimed workers could use it to “distill” the&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://simonwillison.net/2026/Apr/21/andreas-pahlsson-notini/#atom-everything&quot;, &quot;title&quot;: &quot;Quoting Andreas Påhlsson-Notini&quot;, &quot;source&quot;: &quot;Simon Willison&#x27;s Weblog&quot;, &quot;score&quot;: 0.4246, &quot;summary&quot;: &quot;AI agents are already too human. Not in the romantic sense, not because they love or fear or dream, but in the more banal and frustrating one. The current implementations keep showing their human origin again and again: lack of stringency, lack of patience, lack of focus. Faced with an awkward task,&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.technologyreview.com/2026/04/20/1136149/chinese-tech-workers-ai-colleagues/" target="_blank" rel="noopener">Chinese tech workers are starting to train their AI doubles–and pushing back</a>
+        <a href="https://simonwillison.net/2026/Apr/21/andreas-pahlsson-notini/#atom-everything" target="_blank" rel="noopener">Quoting Andreas Påhlsson-Notini</a>
       </h3>
-      <p class="summary">Tech workers in China are being instructed by their bosses to train AI agents to replace them—and it’s prompting a wave of soul-searching among otherwise enthusiastic early adopters.&#160; Earlier this month a GitHub project called Colleague Skill, which claimed workers could use it to “distill” the…</p>
+      <p class="summary">AI agents are already too human. Not in the romantic sense, not because they love or fear or dream, but in the more banal and frustrating one. The current implementations keep showing their human origin again and again: lack of stringency, lack of patience, lack of focus. Faced with an awkward task,…</p>
     </article>
 
     <article class="card" data-score="0.4267" data-url="https://towardsdatascience.com/the-llm-gamble/">
@@ -256,46 +290,88 @@
       <p class="summary">Why it tickles your brain to use an LLM, and what that means for the AI industry The post The LLM Gamble appeared first on Towards Data Science .</p>
     </article>
 
-    <article class="card" data-score="0.566" data-url="https://www.producthunt.com/products/cometchat-skills">
+    <article class="card" data-score="0.4494" data-url="https://www.technologyreview.com/2026/04/21/1134938/ai-at-mit/">
+      <div class="card-meta">
+        <span class="source">MIT Technology Review - AI</span>
+        <span class="pubdate">Apr 21, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:44px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="44% relevance"></span> 44%</span>
+        <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/04/21/1134938/ai-at-mit/&quot;, &quot;title&quot;: &quot;AI at MIT&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.4494, &quot;summary&quot;: &quot;At&amp;#160;MIT, AI has become so pervasive that you can almost find your way into it without meaning to. Take Sili Deng, an associate professor of mechanical engineering. Deng says she still doesn’t know whether she’d have gone all in on artificial intelligence had it not been for the covid pandemic. S&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.technologyreview.com/2026/04/21/1134938/ai-at-mit/" target="_blank" rel="noopener">AI at MIT</a>
+      </h3>
+      <p class="summary">At&#160;MIT, AI has become so pervasive that you can almost find your way into it without meaning to. Take Sili Deng, an associate professor of mechanical engineering. Deng says she still doesn’t know whether she’d have gone all in on artificial intelligence had it not been for the covid pandemic. S…</p>
+    </article>
+
+    <article class="card" data-score="0.465" data-url="https://www.intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe/">
+      <div class="card-meta">
+        <span class="source">Intercom Blog</span>
+        <span class="pubdate">Apr 21, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:46px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="46% relevance"></span> 46%</span>
+        <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe/&quot;, &quot;title&quot;: &quot;AI is approving our pull requests: Here’s how we made it safe&quot;, &quot;source&quot;: &quot;Intercom Blog&quot;, &quot;score&quot;: 0.465, &quot;summary&quot;: &quot;We&#x27;re producing more code than ever at Intercom. Here&#x27;s how we&#x27;re safely using AI for PR approval.&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.intercom.com/blog/ai-is-approving-our-pull-requests-heres-how-we-made-it-safe/" target="_blank" rel="noopener">AI is approving our pull requests: Here’s how we made it safe</a>
+      </h3>
+      <p class="summary">We're producing more code than ever at Intercom. Here's how we're safely using AI for PR approval.</p>
+    </article>
+
+    <article class="card" data-score="0.5497" data-url="https://www.producthunt.com/products/fusedframes">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">Apr 20, 2026</span>
+        <span class="pubdate">Apr 21, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:54px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="54% relevance"></span> 54%</span>
+        <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/fusedframes&quot;, &quot;title&quot;: &quot;FusedFrames&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.5497, &quot;summary&quot;: &quot;Capture the context your AI agents need Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.producthunt.com/products/fusedframes" target="_blank" rel="noopener">FusedFrames</a>
+      </h3>
+      <p class="summary">Capture the context your AI agents need Discussion | Link</p>
+    </article>
+
+    <article class="card" data-score="0.5501" data-url="https://www.producthunt.com/products/loomal">
+      <div class="card-meta">
+        <span class="source">Product Hunt Daily</span>
+        <span class="pubdate">Apr 21, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:55px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="55% relevance"></span> 55%</span>
+        <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/loomal&quot;, &quot;title&quot;: &quot;Loomal&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.5501, &quot;summary&quot;: &quot;Identity infrastructure for AI agents Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.producthunt.com/products/loomal" target="_blank" rel="noopener">Loomal</a>
+      </h3>
+      <p class="summary">Identity infrastructure for AI agents Discussion | Link</p>
+    </article>
+
+    <article class="card" data-score="0.5689" data-url="https://www.technologyreview.com/2026/04/21/1135486/roundtables-unveiling-the-10-things-that-matter-in-ai-right-now/">
+      <div class="card-meta">
+        <span class="source">MIT Technology Review - AI</span>
+        <span class="pubdate">Apr 21, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:56px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="56% relevance"></span> 56%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/cometchat-skills&quot;, &quot;title&quot;: &quot;Chat Skills for AI Agents&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.566, &quot;summary&quot;: &quot;One file. Any agent. Working chat in under 10 minutes. Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/04/21/1135486/roundtables-unveiling-the-10-things-that-matter-in-ai-right-now/&quot;, &quot;title&quot;: &quot;Roundtables: Unveiling The 10 Things That Matter in AI Right Now&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.5689, &quot;summary&quot;: &quot;Listen to the session or watch below Watch a special edition of Roundtables simulcast live from EmTech AI, MIT Technology Review’s signature conference for AI leadership. Subscribers got an exclusive first look at a new list capturing 10 key technologies, emerging trends, bold ideas, and powerful mo&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/cometchat-skills" target="_blank" rel="noopener">Chat Skills for AI Agents</a>
+        <a href="https://www.technologyreview.com/2026/04/21/1135486/roundtables-unveiling-the-10-things-that-matter-in-ai-right-now/" target="_blank" rel="noopener">Roundtables: Unveiling The 10 Things That Matter in AI Right Now</a>
       </h3>
-      <p class="summary">One file. Any agent. Working chat in under 10 minutes. Discussion | Link</p>
+      <p class="summary">Listen to the session or watch below Watch a special edition of Roundtables simulcast live from EmTech AI, MIT Technology Review’s signature conference for AI leadership. Subscribers got an exclusive first look at a new list capturing 10 key technologies, emerging trends, bold ideas, and powerful mo…</p>
     </article>
 
-    <article class="card" data-score="0.5947" data-url="https://www.producthunt.com/products/cosmic">
+    <article class="card" data-score="0.5775" data-url="https://www.producthunt.com/products/basedash">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">Apr 20, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:59px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="59% relevance"></span> 59%</span>
+        <span class="pubdate">Apr 21, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:57px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="57% relevance"></span> 57%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/cosmic&quot;, &quot;title&quot;: &quot;Cosmic Agent Marketplace&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.5947, &quot;summary&quot;: &quot;AI agents for your team, built into your CMS Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/basedash&quot;, &quot;title&quot;: &quot;Basedash Automations&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.5775, &quot;summary&quot;: &quot;Your AI data analyst that works while you sleep. Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 21, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/cosmic" target="_blank" rel="noopener">Cosmic Agent Marketplace</a>
+        <a href="https://www.producthunt.com/products/basedash" target="_blank" rel="noopener">Basedash Automations</a>
       </h3>
-      <p class="summary">AI agents for your team, built into your CMS Discussion | Link</p>
-    </article>
-
-    <article class="card" data-score="0.6005" data-url="https://www.producthunt.com/products/shiftly-2">
-      <div class="card-meta">
-        <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">Apr 20, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:60px;height:8px;background:#2ecc71;border-radius:3px;vertical-align:middle" title="60% relevance"></span> 60%</span>
-        <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/shiftly-2&quot;, &quot;title&quot;: &quot;SHIFTLY&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.6005, &quot;summary&quot;: &quot;AI-powered growth strategist for builders and small teams Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 20, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
-      </div>
-      <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/shiftly-2" target="_blank" rel="noopener">SHIFTLY</a>
-      </h3>
-      <p class="summary">AI-powered growth strategist for builders and small teams Discussion | Link</p>
+      <p class="summary">Your AI data analyst that works while you sleep. Discussion | Link</p>
     </article>
 
     <article class="card" data-score="0.4024" data-url="https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/">
