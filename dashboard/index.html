@@ -74,14 +74,14 @@
   <header>
     <a href="saved.html" class="nav-link">&#9733; Saved Articles</a>
     <h1>AI PM Daily Digest</h1>
-    <div class="meta">Updated May 02, 2026 at 08:19 UTC</div>
+    <div class="meta">Updated May 03, 2026 at 08:31 UTC</div>
     <div class="stats">
       <div class="stat">
-        <div class="stat-num">21</div>
+        <div class="stat-num">17</div>
         <div class="stat-label">Articles</div>
       </div>
       <div class="stat">
-        <div class="stat-num">20</div>
+        <div class="stat-num">16</div>
         <div class="stat-label">In digest</div>
       </div>
     </div>
@@ -91,71 +91,60 @@
     <div class="briefing-label">AI Intelligence Briefing</div>
     <div class="briefing-body">
       <h2 class="briefing-signal-heading">Today's Signal</h2>
-<p>The production AI landscape is maturing rapidly from experimental frameworks to native architectures and specialized tooling. Companies are moving beyond LangChain toward custom agent systems while simultaneously demanding more control over their AI infrastructure through data sovereignty and model interpretability tools. This shift signals that we're entering a phase where AI product management requires deeper technical understanding of architecture decisions, not just prompt engineering skills.</p>
+<p>Companies are moving beyond basic AI adoption to building internal "AI factories" that process their own proprietary data at scale, while the tooling ecosystem is maturing with native automation frameworks and specialized databases designed specifically for agent workflows. This represents a shift from experimentation to operationalization, where the focus is on governance, data sovereignty, and building repeatable AI-powered processes rather than one-off implementations.</p>
 
 <h2 class="briefing-heading">Tools & Releases Worth Knowing</h2>
 
-<p><strong>Silico by Goodfire</strong> - A mechanistic interpretability tool that lets you debug and adjust LLM parameters during training for more fine-grained control over model behavior.</p>
+<p><strong>Agent-desktop</strong> - A native CLI tool that enables AI agents to automate desktop applications and workflows directly on your machine.</p>
 <ul class="briefing-list">
-<li>Why it matters: Enables AI PMs to have actual oversight and control over model outputs rather than just black-box prompting.</li>
-<li>Skill or action: Learn the basics of mechanistic interpretability and how model parameters affect behavior - start with Goodfire's documentation.</li>
+<li>Why it matters: Bridges the gap between AI reasoning and actual system automation, letting you build agents that can interact with existing desktop tools and workflows without API dependencies.</li>
+<li>Skill or action: Experiment with desktop automation scripts to understand how agents can integrate with legacy systems and non-API tools in your current workflows.</li>
 </ul>
 
-<p><strong>Montage</strong> - A runtime framework specifically designed for building agentic user interfaces.</p>
+<p><strong>Mljar Studio</strong> - A local AI data analyst that automatically generates analysis notebooks from natural language queries about your data.</p>
 <ul class="briefing-list">
-<li>Why it matters: Provides structured tooling for AI PMs building agent-driven products rather than traditional chat interfaces.</li>
-<li>Skill or action: Explore agent UI patterns and how they differ from traditional UX flows.</li>
+<li>Why it matters: Demonstrates the pattern of AI tools that maintain full local control while producing transparent, reproducible outputs that can be audited and modified.</li>
+<li>Skill or action: Practice designing prompts that generate not just insights but also documented, repeatable analytical processes you can hand off to stakeholders.</li>
 </ul>
 
-<p><strong>nudge</strong> - An AI scheduling tool that auto-schedules your entire week after you drop in tasks.</p>
+<p><strong>Ghost Database</strong> - A purpose-built database architecture designed specifically for AI agent workflows and data patterns.</p>
 <ul class="briefing-list">
-<li>Why it matters: Demonstrates practical AI workflow automation for project management use cases.</li>
-<li>Skill or action: Test it with your own task management to understand AI-driven scheduling patterns.</li>
-</ul>
-
-<p><strong>Ghost Database</strong> - The first database specifically built for AI agents.</p>
-<ul class="briefing-list">
-<li>Why it matters: Shows infrastructure is evolving to support agent architectures, not just traditional applications.</li>
-<li>Skill or action: Research how agent-specific databases differ from traditional ones.</li>
+<li>Why it matters: Shows how infrastructure is evolving to support agent-first applications, which will become critical as you build more complex AI-powered systems.</li>
+<li>Skill or action: Study how agent-specific databases differ from traditional databases to understand the architectural decisions you'll need to make in AI product development.</li>
 </ul>
 
 <h2 class="briefing-heading">Workflow & Use Case Ideas</h2>
 
-<p><strong>Idea: WhatsApp-based AI order taking</strong> — Why it matters: Shows how AI can integrate into existing customer touchpoints without requiring new app adoption.</p>
+<p><strong>Idea: Local AI analysis with audit trails</strong> — Why it matters: Combines the flexibility of AI analysis with the compliance requirements of saving reproducible notebooks that stakeholders can review and modify.</p>
 
-<p><strong>Idea: Native agent architectures over framework abstraction</strong> — Why it matters: Production AI products need custom solutions rather than one-size-fits-all frameworks for reliability and control.</p>
+<p><strong>Idea: Desktop automation for legacy system integration</strong> — Why it matters: Solves the common problem of connecting AI reasoning to existing tools that don't have APIs, which is critical for most enterprise workflows.</p>
 
-<p><strong>Idea: Mechanistic model debugging during training</strong> — Why it matters: Enables proactive AI product management rather than reactive prompt tuning after deployment.</p>
-
-<p><strong>Idea: AI factories for data sovereignty</strong> — Why it matters: Companies want control over their AI infrastructure and data flows, creating opportunities for internal AI product roles.</p>
+<p><strong>Idea: Data sovereignty through internal AI factories</strong> — Why it matters: Addresses the compliance and competitive advantage needs of processing proprietary data without sending it to external services.</p>
 
 <h2 class="briefing-heading">What The Leaders Are Doing</h2>
 
-<p>AI engineers are actively moving away from LangChain and similar frameworks toward building native agent architectures for production systems. Companies are establishing "AI factories" to maintain control over their data and AI model training rather than relying entirely on external providers. Startups like AITropos are focusing on seamless integration into existing customer communication channels (WhatsApp) rather than building new interfaces. Organizations are prioritizing AI model interpretability and debugging capabilities as they move from experimentation to production deployment.</p>
+<p>Companies are building internal "AI factories" focused on data sovereignty and governance rather than relying on external AI services. They're prioritizing the ability to process their own proprietary data at scale while maintaining control over data flow and quality. Organizations are also investing in agent-specific infrastructure like specialized databases, indicating they're moving beyond simple chatbot implementations to building complex, multi-step AI workflows that require new architectural approaches.</p>
 
 <h2 class="briefing-heading">Skill to Build This Week</h2>
 
-<p><strong>Learn agent architecture patterns and how they differ from traditional LLM applications.</strong> The shift from frameworks to native architectures is accelerating, and understanding why production systems need different approaches than prototypes is becoming critical for AI PMs. Start by reading the Towards Data Science article on moving beyond LangChain, then experiment with building a simple multi-step agent workflow without using a framework - just direct API calls and state management.</p>
+<p><strong>Learn agent workflow orchestration patterns</strong> - With tools like agent-desktop and Ghost database emerging, understanding how to design multi-step AI workflows that combine reasoning, data access, and system automation is becoming essential. Start by mapping out a current manual process in your work (like compliance reporting or project status updates) and breaking it down into discrete steps that an agent could execute. Spend time understanding the handoffs between AI reasoning, data retrieval, and action execution - this architectural thinking will be crucial as AI products become more sophisticated.</p>
 
 <h2 class="briefing-heading">Articles In Full Digest</h2>
 
-<p><strong>Building AI Employees for Hospitality: How AITropos Takes Orders Where Customers Already Are</strong> - Product Talk, 55% - Explores how to build AI that can take food orders over WhatsApp with human-like speed and accuracy. Shows practical implementation of conversational AI in existing customer channels.</p>
+<p><strong>Operationalizing AI for Scale and Sovereignty</strong> - MIT Technology Review - AI - 51% relevance</p>
+<p>Companies are building internal AI capabilities to process proprietary data while maintaining control and governance. The focus is on creating sustainable, scalable AI operations that balance data ownership with the need for high-quality insights.</p>
 
-<p><strong>Why AI Engineers Are Moving Beyond LangChain to Native Agent Architectures</strong> - Towards Data Science, 54% - Explains why production AI systems require custom architectures rather than framework abstractions. Details the technical and business reasons driving this architectural shift.</p>
+<p><strong>Show HN: Agent-desktop – Native desktop automation CLI for AI agents</strong> - Hacker News (AI tools) - 49% relevance</p>
+<p>A command-line tool that enables AI agents to directly control and automate desktop applications. The HN discussion generated significant interest with 93 points and 35 comments, indicating strong developer interest in agent automation tools.</p>
 
-<p><strong>Operationalizing AI for Scale and Sovereignty</strong> - MIT Technology Review, 51% - Discusses how companies are taking control of their AI infrastructure and data to build tailored solutions. Focuses on balancing data ownership with AI model performance.</p>
+<p><strong>Show HN: Mljar Studio – local AI data analyst that saves analysis as notebooks</strong> - Hacker News (AI tools) - 44% relevance</p>
+<p>A local AI tool that performs data analysis and automatically generates Jupyter notebooks documenting the process. This approach maintains data privacy while creating reproducible, auditable analytical workflows.</p>
 
-<p><strong>This startup's new mechanistic interpretability tool lets you debug LLMs</strong> - MIT Technology Review, 49% - Introduces Goodfire's Silico tool for debugging and adjusting LLM parameters during training. Represents a major advance in AI model transparency and control.</p>
+<p><strong>Ghost: A Database for Our Times?</strong> - Towards Data Science - 44% relevance</p>
+<p>An exploration of Ghost, described as the first database specifically designed for AI agent workflows. This represents infrastructure evolution to support the unique data patterns and requirements of AI-powered applications.</p>
 
-<p><strong>Montage</strong> - Product Hunt, 49% - Runtime framework for building agentic user interfaces. Provides structured tooling for agent-driven product development.</p>
-
-<p><strong>nudge</strong> - Product Hunt, 47% - AI tool that automatically schedules your entire week based on task input. Demonstrates practical AI workflow automation for personal productivity.</p>
-
-<p><strong>Ghost: A Database for Our Times?</strong> - Towards Data Science, 44% - Introduces the first database specifically designed for AI agents. Shows how infrastructure is evolving to support agent architectures.</p>
-
-<p><strong>Our evaluation of OpenAI's GPT-5.5 cyber capabilities</strong> - Simon Willison's Weblog, 43% - UK AI Security Institute evaluation comparing GPT-5.5 to Claude Mythos for security vulnerability detection. Shows advancing capabilities in AI security research.</p>
-
-<p><strong>How to Get Hired in the AI Era</strong> - Towards Data Science, 43% - Provides guidance on what employers look for when hiring junior AI talent. Offers insights into current market demands and skill expectations.</p>
+<p><strong>How to Get Hired in the AI Era</strong> - Towards Data Science - 43% relevance</p>
+<p>Career guidance focused on what employers actually seek when hiring junior professionals in an AI-transformed job market. Covers practical skills and positioning strategies for standing out in AI-adjacent roles.</p>
     </div>
   </section>
 
@@ -185,20 +174,6 @@
       <p class="summary">What people actually look for when hiring juniors that stand out. The post How to Get Hired in the AI Era appeared first on Towards Data Science .</p>
     </article>
 
-    <article class="card" data-score="0.4356" data-url="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything">
-      <div class="card-meta">
-        <span class="source">Simon Willison's Weblog</span>
-        <span class="pubdate">Apr 30, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:43px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="43% relevance"></span> 43%</span>
-        <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything&quot;, &quot;title&quot;: &quot;Our evaluation of OpenAI&#x27;s GPT-5.5 cyber capabilities&quot;, &quot;source&quot;: &quot;Simon Willison&#x27;s Weblog&quot;, &quot;score&quot;: 0.4356, &quot;summary&quot;: &quot;Our evaluation of OpenAI&amp;#x27;s GPT-5.5 cyber capabilities The UK&#x27;s AI Security Institute previously evaluated Claude Mythos : now they&#x27;ve evaluated GPT-5.5 for finding security vulnerability and found it to be comparable to Mythos, but unlike Mythos it&#x27;s generally available right now. Tags: ai , op&quot;, &quot;published&quot;: &quot;Apr 30, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
-      </div>
-      <h3 class="card-title">
-        <a href="https://simonwillison.net/2026/Apr/30/gpt-55-cyber-capabilities/#atom-everything" target="_blank" rel="noopener">Our evaluation of OpenAI's GPT-5.5 cyber capabilities</a>
-      </h3>
-      <p class="summary">Our evaluation of OpenAI&#x27;s GPT-5.5 cyber capabilities The UK's AI Security Institute previously evaluated Claude Mythos : now they've evaluated GPT-5.5 for finding security vulnerability and found it to be comparable to Mythos, but unlike Mythos it's generally available right now. Tags: ai , op…</p>
-    </article>
-
     <article class="card" data-score="0.4474" data-url="https://towardsdatascience.com/ghost-a-database-for-our-times/">
       <div class="card-meta">
         <span class="source">Towards Data Science</span>
@@ -213,46 +188,32 @@
       <p class="summary">The first database built for AI Agents The post Ghost: A Database for Our Times? appeared first on Towards Data Science .</p>
     </article>
 
-    <article class="card" data-score="0.4762" data-url="https://www.producthunt.com/products/nudge-26">
+    <article class="card" data-score="0.4486" data-url="https://mljar.com/">
       <div class="card-meta">
-        <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">Apr 30, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:47px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="47% relevance"></span> 47%</span>
+        <span class="source">Hacker News (AI tools)</span>
+        <span class="pubdate">May 02, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:44px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="44% relevance"></span> 44%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/nudge-26&quot;, &quot;title&quot;: &quot;nudge&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4762, &quot;summary&quot;: &quot;Drop your tasks. AI auto-schedules your whole week. Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 30, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://mljar.com/&quot;, &quot;title&quot;: &quot;Show HN: Mljar Studio – local AI data analyst that saves analysis as notebooks&quot;, &quot;source&quot;: &quot;Hacker News (AI tools)&quot;, &quot;score&quot;: 0.4486, &quot;summary&quot;: &quot;HN discussion: Show HN: Mljar Studio – local AI data analyst that saves analysis as notebooks. Points: 65, Comments: 10&quot;, &quot;published&quot;: &quot;May 02, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/nudge-26" target="_blank" rel="noopener">nudge</a>
+        <a href="https://mljar.com/" target="_blank" rel="noopener">Show HN: Mljar Studio – local AI data analyst that saves analysis as notebooks</a>
       </h3>
-      <p class="summary">Drop your tasks. AI auto-schedules your whole week. Discussion | Link</p>
+      <p class="summary">HN discussion: Show HN: Mljar Studio – local AI data analyst that saves analysis as notebooks. Points: 65, Comments: 10</p>
     </article>
 
-    <article class="card" data-score="0.498" data-url="https://www.producthunt.com/products/montage-3">
+    <article class="card" data-score="0.4909" data-url="https://github.com/lahfir/agent-desktop">
       <div class="card-meta">
-        <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">Apr 30, 2026</span>
+        <span class="source">Hacker News (AI tools)</span>
+        <span class="pubdate">May 02, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:49px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="49% relevance"></span> 49%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/montage-3&quot;, &quot;title&quot;: &quot;Montage&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.498, &quot;summary&quot;: &quot;The runtime framework for agentic user interfaces! Discussion | Link&quot;, &quot;published&quot;: &quot;Apr 30, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://github.com/lahfir/agent-desktop&quot;, &quot;title&quot;: &quot;Show HN: Agent-desktop – Native desktop automation CLI for AI agents&quot;, &quot;source&quot;: &quot;Hacker News (AI tools)&quot;, &quot;score&quot;: 0.4909, &quot;summary&quot;: &quot;HN discussion: Show HN: Agent-desktop – Native desktop automation CLI for AI agents. Points: 93, Comments: 35&quot;, &quot;published&quot;: &quot;May 02, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/montage-3" target="_blank" rel="noopener">Montage</a>
+        <a href="https://github.com/lahfir/agent-desktop" target="_blank" rel="noopener">Show HN: Agent-desktop – Native desktop automation CLI for AI agents</a>
       </h3>
-      <p class="summary">The runtime framework for agentic user interfaces! Discussion | Link</p>
-    </article>
-
-    <article class="card" data-score="0.4991" data-url="https://www.technologyreview.com/2026/04/30/1136721/this-startups-new-mechanistic-interpretability-tool-lets-you-debug-llms/">
-      <div class="card-meta">
-        <span class="source">MIT Technology Review - AI</span>
-        <span class="pubdate">Apr 30, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:49px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="49% relevance"></span> 49%</span>
-        <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/04/30/1136721/this-startups-new-mechanistic-interpretability-tool-lets-you-debug-llms/&quot;, &quot;title&quot;: &quot;This startup’s new mechanistic interpretability tool lets you debug LLMs&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.4991, &quot;summary&quot;: &quot;The San Francisco–based startup Goodfire just released a new tool, called Silico, that lets researchers and engineers peer inside an AI model and adjust its parameters—the settings that determine a model’s behavior—during training. This could give model makers more fine-grained control over how this&quot;, &quot;published&quot;: &quot;Apr 30, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
-      </div>
-      <h3 class="card-title">
-        <a href="https://www.technologyreview.com/2026/04/30/1136721/this-startups-new-mechanistic-interpretability-tool-lets-you-debug-llms/" target="_blank" rel="noopener">This startup’s new mechanistic interpretability tool lets you debug LLMs</a>
-      </h3>
-      <p class="summary">The San Francisco–based startup Goodfire just released a new tool, called Silico, that lets researchers and engineers peer inside an AI model and adjust its parameters—the settings that determine a model’s behavior—during training. This could give model makers more fine-grained control over how this…</p>
+      <p class="summary">HN discussion: Show HN: Agent-desktop – Native desktop automation CLI for AI agents. Points: 93, Comments: 35</p>
     </article>
 
     <article class="card" data-score="0.512" data-url="https://www.technologyreview.com/2026/05/01/1136772/operationalizing-ai-for-scale-and-sovereignty/">
@@ -267,34 +228,6 @@
         <a href="https://www.technologyreview.com/2026/05/01/1136772/operationalizing-ai-for-scale-and-sovereignty/" target="_blank" rel="noopener">Operationalizing AI for Scale and Sovereignty</a>
       </h3>
       <p class="summary">Companies are taking control of their own data to tailor AI for their needs. The challenge lies in balancing ownership with the safe, trusted flow of high‑quality data needed to power reliable insights. This conversation from MIT Technology Review&#8217;s EmTech AI conference examines how AI factori…</p>
-    </article>
-
-    <article class="card" data-score="0.5422" data-url="https://towardsdatascience.com/why-ai-engineers-are-moving-beyond-langchain-to-native-agent-architectures/">
-      <div class="card-meta">
-        <span class="source">Towards Data Science</span>
-        <span class="pubdate">Apr 30, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:54px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="54% relevance"></span> 54%</span>
-        <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://towardsdatascience.com/why-ai-engineers-are-moving-beyond-langchain-to-native-agent-architectures/&quot;, &quot;title&quot;: &quot;Why AI Engineers Are Moving Beyond LangChain to Native Agent Architectures&quot;, &quot;source&quot;: &quot;Towards Data Science&quot;, &quot;score&quot;: 0.5422, &quot;summary&quot;: &quot;Frameworks accelerated the first wave of LLM apps, but production demands a different architecture. The post Why AI Engineers Are Moving Beyond LangChain to Native Agent Architectures appeared first on Towards Data Science .&quot;, &quot;published&quot;: &quot;Apr 30, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
-      </div>
-      <h3 class="card-title">
-        <a href="https://towardsdatascience.com/why-ai-engineers-are-moving-beyond-langchain-to-native-agent-architectures/" target="_blank" rel="noopener">Why AI Engineers Are Moving Beyond LangChain to Native Agent Architectures</a>
-      </h3>
-      <p class="summary">Frameworks accelerated the first wave of LLM apps, but production demands a different architecture. The post Why AI Engineers Are Moving Beyond LangChain to Native Agent Architectures appeared first on Towards Data Science .</p>
-    </article>
-
-    <article class="card" data-score="0.556" data-url="https://www.producttalk.org/building-ai-employees-for-hospitality-how-aitropos-takes-orders-where-customers-already-are/">
-      <div class="card-meta">
-        <span class="source">Product Talk</span>
-        <span class="pubdate">Apr 30, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:55px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="55% relevance"></span> 55%</span>
-        <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producttalk.org/building-ai-employees-for-hospitality-how-aitropos-takes-orders-where-customers-already-are/&quot;, &quot;title&quot;: &quot;Building AI Employees for Hospitality: How AITropos Takes Orders Where Customers Already Are&quot;, &quot;source&quot;: &quot;Product Talk&quot;, &quot;score&quot;: 0.556, &quot;summary&quot;: &quot;Listen to this episode on: Spotify | Apple Podcasts What does it take to build an AI that can take a food order over WhatsApp &amp;#x2014; correctly, every time, fast enough that customers can&amp;apos;t tell it&amp;apos;s not a person? That&amp;apos;s the core challenge Santi Marchiori&quot;, &quot;published&quot;: &quot;Apr 30, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
-      </div>
-      <h3 class="card-title">
-        <a href="https://www.producttalk.org/building-ai-employees-for-hospitality-how-aitropos-takes-orders-where-customers-already-are/" target="_blank" rel="noopener">Building AI Employees for Hospitality: How AITropos Takes Orders Where Customers Already Are</a>
-      </h3>
-      <p class="summary">Listen to this episode on: Spotify | Apple Podcasts What does it take to build an AI that can take a food order over WhatsApp &#x2014; correctly, every time, fast enough that customers can&apos;t tell it&apos;s not a person? That&apos;s the core challenge Santi Marchiori</p>
     </article>
 
     <article class="card" data-score="0.4024" data-url="https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/">
