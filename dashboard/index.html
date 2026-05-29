@@ -74,14 +74,14 @@
   <header>
     <a href="saved.html" class="nav-link">&#9733; Saved Articles</a>
     <h1>AI PM Daily Digest</h1>
-    <div class="meta">Updated May 28, 2026 at 10:46 UTC</div>
+    <div class="meta">Updated May 29, 2026 at 10:41 UTC</div>
     <div class="stats">
       <div class="stat">
-        <div class="stat-num">24</div>
+        <div class="stat-num">28</div>
         <div class="stat-label">Articles</div>
       </div>
       <div class="stat">
-        <div class="stat-num">22</div>
+        <div class="stat-num">24</div>
         <div class="stat-label">In digest</div>
       </div>
     </div>
@@ -90,70 +90,76 @@
   <section class="briefing-panel" id="briefing">
     <div class="briefing-label">AI Intelligence Briefing</div>
     <div class="briefing-body">
-      <p># AI PM Daily Briefing</p>
+      <p># AI PM Daily Briefing - May 28, 2026</p>
 
 <h2 class="briefing-signal-heading">Today's Signal</h2>
-<p>There's a critical gap emerging between AI ambitions and organizational readiness, with 85% of enterprises wanting to go "agentic" within three years but 76% lacking the operational infrastructure to support it. The real insight is that successful AI implementation isn't about throwing LLMs at problems, but about building deterministic, well-architected systems around AI capabilities while developing human judgment to guide these tools effectively.</p>
+<p>AI spending rationalization is hitting engineering departments as teams realize that faster shipping doesn't automatically mean better products—in fact, it amplifies the cost of building wrong things. The signal here is a maturation moment: successful AI-native PMs are emerging as those who focus on product craft and strategic judgment rather than just velocity, while companies are starting to audit their AI tool sprawl and demand ROI accountability.</p>
 
 <h2 class="briefing-heading">Tools & Releases Worth Knowing</h2>
 
-<p><strong>Compartment</strong> - Open-source runtime for internal team software that appears focused on containerizing business applications.</p>
+<p><strong>Basedash Embedded Analytics</strong> - Give customers AI analytics directly inside your product interface</p>
 <ul class="briefing-list">
-<li>Why it matters: Could provide a foundation for deploying AI agents securely within existing enterprise workflows.</li>
-<li>Skill/Action: Research containerization patterns for AI tools to understand deployment architecture.</li>
+<li>Why it matters: This addresses the "analytics inside the workflow" trend that AI PMs need to understand for building sticky, data-driven products</li>
+<li>Skill/action: Study how embedded analytics can reduce context switching in your own product workflows</li>
 </ul>
 
-<p><strong>Crew44</strong> - Platform that transforms coding agents into specialized teams for different functions.</p>
+<p><strong>PromptLayer</strong> - Trace AI requests, workflows, and costs in one unified timeline</p>
 <ul class="briefing-list">
-<li>Why it matters: Shows the evolution from single AI agents to orchestrated multi-agent systems for complex project workflows.</li>
-<li>Skill/Action: Study multi-agent coordination patterns and how to break complex PM tasks into agent-specific roles.</li>
+<li>Why it matters: Essential for AI PMs who need to debug, optimize, and justify AI implementation costs across product features</li>
+<li>Skill/action: Set up request tracing on your next prompt engineering project to understand cost and performance patterns</li>
 </ul>
 
-<p><strong>zero.xyz</strong> - Service providing AI agents access to approximately 8,000 tools, APIs, and services.</p>
+<p><strong>Compartment</strong> - Open-source runtime for internal team software</p>
 <ul class="briefing-list">
-<li>Why it matters: Demonstrates the infrastructure needed for truly capable AI assistants that can integrate with existing business systems.</li>
-<li>Skill/Action: Map your current tool stack and identify integration opportunities for AI automation.</li>
+<li>Why it matters: Provides infrastructure for building internal AI tools without vendor lock-in, relevant for teams building custom AI workflows</li>
+<li>Skill/action: Evaluate this against your current internal tooling stack for AI experimentation</li>
 </ul>
 
 <h2 class="briefing-heading">Workflow & Use Case Ideas</h2>
 
-<p><strong>Idea:</strong> Structured document processing using deterministic loops around AI agents instead of treating LLMs as black-box problem solvers — <strong>Why it matters:</strong> This approach turns messy, unstructured inputs (like compliance documents) into reliable, repeatable workflows that can scale.</p>
+<p><strong>Idea: AI Agent Architecture with "Humility" Design</strong> — Why it matters: Building agents that know their limits and escalate appropriately prevents customer frustration and reduces support overhead.</p>
 
-<p><strong>Idea:</strong> AI-first customer support transformation achieving 71% AI resolution rates while reducing manual tickets by 65% — <strong>Why it matters:</strong> Shows how AI can shift support from cost center to growth engine, applicable to internal project management operations.</p>
+<p><strong>Idea: Design Systems as Context Engines for AI</strong> — Why it matters: Treating design systems as structured context for AI tools rather than just component libraries accelerates consistent AI-powered experiences.</p>
 
-<p><strong>Idea:</strong> Breaking down AI agent architecture with models as components rather than solutions — <strong>Why it matters:</strong> Prevents the common failure pattern where teams over-rely on model capabilities instead of building proper workflow architecture.</p>
+<p><strong>Idea: Local LLM Infrastructure for Sensitive Workflows</strong> — Why it matters: Running agents locally with proper infrastructure enables AI automation for compliance-heavy processes where data can't leave your environment.</p>
+
+<p><strong>Idea: AI-Native Banking Workflow Transformation</strong> — Why it matters: MUFG's enterprise ChatGPT implementation shows how large organizations are systematically rebuilding core processes around AI rather than just adding AI features.</p>
 
 <h2 class="briefing-heading">What The Leaders Are Doing</h2>
 
-<p>Leadership Circle successfully implemented AI-first customer support serving 3 million customers across 17 languages, achieving measurable business impact by treating AI as workflow infrastructure rather than a magic solution. Engineering teams at major companies are shifting from having AI write all the code to having engineers focus on architecture, review, and integration work while AI handles routine implementation. Organizations are recognizing that AI readiness requires fundamental changes to people, processes, and workflows—not just technology adoption.</p>
+<p>Engineering teams are conducting "AI spend audits" to cut unnecessary token costs and consolidate AI tool usage. Atlassian is rebuilding their design system to serve as a "context engine" for AI tools rather than just a component library. MUFG is implementing organization-wide ChatGPT Enterprise to become "AI-native" across all financial services workflows. Companies building AI agents are shifting from model-first to architecture-first approaches after learning that good models don't save bad system design.</p>
 
 <h2 class="briefing-heading">Skill to Build This Week</h2>
 
-<p><strong>Learn deterministic AI agent architecture patterns.</strong> Based on today's articles about agents failing in production, you need to understand how to build reliable, predictable AI workflows rather than hoping LLMs will solve complex problems end-to-end. Start by reading about state machines and workflow orchestration, then practice breaking a current manual process into discrete steps that could be handled by different AI capabilities with clear handoffs and validation points.</p>
+<p><strong>Learn AI Agent Architecture Patterns</strong> - Based on multiple articles highlighting agent failures, now is the time to understand how to structure AI systems that work in production. The signal is clear: most teams are building agents backwards and learning this the hard way. Start with the "Most AI Agents Fail in Production" article to understand common architectural mistakes, then spend 30-45 minutes sketching out how you'd architect an AI agent for a workflow in your domain, focusing on error handling and escalation paths rather than just the happy path.</p>
 
 <h2 class="briefing-heading">Articles In Full Digest</h2>
 
-<p>1. <strong>Rethinking organizational design in the age of agentic AI</strong> - MIT Technology Review - 53% - Shows the disconnect between enterprise AI ambitions (85% want to be agentic) and operational readiness (76% lack supporting infrastructure). Highlights the need for fundamental changes in people, processes, and workflows to support AI transformation.</p>
+<p>1. <strong>The future of product craft: Why AI-native PMs build better products, not just work faster</strong> | Atlassian Blog | 56% | AI-native PMs focus on product craft and judgment as AI lowers building barriers but raises the cost of shipping wrong features. Teams can now ship mistakes faster, making strategic product thinking more critical than ever.</p>
 
-<p>2. <strong>Stop Using LLMs Like Giant Problem Solvers</strong> - Towards Data Science - 52% - Demonstrates how building deterministic loops around AI agents can successfully process complex documents. Shows the importance of treating LLMs as components in larger systems rather than standalone solutions.</p>
+<p>2. <strong>The Pulse: a trend of trying to cut back on AI spend within eng departments?</strong> | The Pragmatic Engineer | 56% | Engineering departments are conducting top-down and bottom-up efforts to rationalize AI token spend and tool sprawl. Includes interesting stats from Cursor on AI coding usage patterns and enterprise spending trends.</p>
 
-<p>3. <strong>AI tools are only as good as your judgment</strong> - Hacker News - 52% - Community discussion emphasizing that human judgment remains critical in AI tool effectiveness. Reinforces that AI augmentation requires developing both technical and judgment skills.</p>
+<p>3. <strong>Basedash: Embedded Analytics</strong> | Product Hunt | 54% | Product launch for embedding AI analytics directly inside customer-facing products. Enables users to get insights without leaving their primary workflow interface.</p>
 
-<p>4. <strong>Compartment</strong> - Product Hunt - 50% - Open-source runtime for internal team software with potential applications for secure AI agent deployment. Represents the infrastructure layer needed for enterprise AI adoption.</p>
+<p>4. <strong>PromptLayer</strong> | Product Hunt | 51% | Tool for tracing AI requests, workflows, and costs in a unified timeline view. Helps teams debug and optimize their AI implementations across different use cases.</p>
 
-<p>5. <strong>Crew44</strong> - Product Hunt - 49% - Platform for turning coding agents into specialist teams, showing evolution toward multi-agent coordination. Relevant for complex project management workflows requiring different AI capabilities.</p>
+<p>5. <strong>Compartment</strong> | Product Hunt | 50% | Open-source runtime specifically designed for internal team software and tooling. Provides infrastructure for custom AI workflow automation without vendor dependencies.</p>
 
-<p>6. <strong>zero.xyz</strong> - Product Hunt - 48% - Service providing AI agents access to ~8k tools and APIs, demonstrating the integration infrastructure needed for capable AI assistants. Shows the direction toward comprehensive AI-powered workflow automation.</p>
+<p>6. <strong>Most AI Agents Fail in Production Because They're Built Backwards</strong> | Towards Data Science | 47% | Analysis of why AI agents fail in real-world deployment, emphasizing that good models don't compensate for poor system architecture. Teams need to focus on infrastructure and error handling from the start.</p>
 
-<p>7. <strong>Most AI Agents Fail in Production Because They're Built Backwards</strong> - Towards Data Science - 47% - Explains why good models don't save bad architecture and how teams typically learn this lesson the hard way. Critical reading for anyone building AI products or workflows.</p>
+<p>7. <strong>How AI is Changing Developer Workflows</strong> | Atlassian Blog | 47% | Research on how developers actually use AI in their daily work, showing AI handles code generation while engineers focus on higher-level architecture and problem-solving. Documents the shift in developer skillsets and responsibilities.</p>
 
-<p>8. <strong>How AI is Changing Developer Workflows</strong> - Atlassian - 47% - Documents how AI shifts developer focus from code writing to higher-level architecture and integration work. Applicable pattern for how AI changes knowledge work in general.</p>
+<p>8. <strong>Atlassian Design System: Building the context engine for the AI era</strong> | Atlassian Blog | 47% | Atlassian is evolving their design system beyond UI components to serve as a "context engine" for AI tools. Shows how design systems can structure information for AI consumption and consistent experiences.</p>
 
-<p>9. <strong>The Download: puncturing the AI jobs panic</strong> - MIT Technology Review - 47% - Provides reality check on AI job displacement fears, noting lack of large-scale evidence for white-collar job impact. Important context for AI adoption planning.</p>
+<p>9. <strong>The Infrastructure Behind Making Local LLM Agents Actually Useful</strong> | Towards Data Science | 47% | Technical deep-dive on building production-ready local LLM agents using vLLM and long-context infrastructure. Covers practical lessons from deploying scientific research agents with open-weight models.</p>
 
-<p>10. <strong>AI-first support transformation lessons</strong> - Atlassian - 44% - Case study of Leadership Circle achieving 71% AI resolution rate and transforming support from cost center to growth engine. Demonstrates measurable AI business impact and transformation patterns.</p>
+<p>10. <strong>Building Lorikeet: AI Humility and Dual-Agent Architecture</strong> | Product Talk | 45% | Case study of building AI customer support agents that know their limitations and escalate appropriately. Demonstrates dual-agent architecture patterns for reliable AI customer service.</p>
 
-<p>11. <strong>The Download: keeping up with AI</strong> - MIT Technology Review - 44% - General AI news roundup emphasizing the relentless pace of AI development. Reinforces the need for continuous learning and adaptation in AI-related roles.</p>
+<p>11. <strong>The Download: keeping up with AI</strong> | MIT Technology Review | 44% | Newsletter roundup emphasizing the challenge of staying current with AI developments. Highlights the information overload problem facing AI professionals and practitioners.</p>
+
+<p>12. <strong>MUFG aims to become AI-native with OpenAI</strong> | OpenAI Blog | 41% | Major Japanese bank implementing ChatGPT Enterprise across operations to build an AI-native organization. Shows enterprise-scale AI workflow transformation in heavily regulated financial services.</p>
+
+<p>13. <strong>The AI Hype Index: AI gets booed in graduation season</strong> | MIT Technology Review | 41% | Analysis of public sentiment toward AI, noting that graduating students booed former Google CEO Eric Schmidt's AI-focused commencement speech. Highlights growing skepticism despite continued corporate AI investment.</p>
     </div>
   </section>
 
@@ -169,18 +175,74 @@
 
   <main id="articles">
     
+    <article class="card" data-score="0.4132" data-url="https://www.producthunt.com/products/extract-by-firecrawl">
+      <div class="card-meta">
+        <span class="source">Product Hunt Daily</span>
+        <span class="pubdate">May 28, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:41px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="41% relevance"></span> 41%</span>
+        
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/extract-by-firecrawl&quot;, &quot;title&quot;: &quot;/monitor by Firecrawl&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4132, &quot;summary&quot;: &quot;Notify your AI agent when the web changes Discussion | Link&quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.producthunt.com/products/extract-by-firecrawl" target="_blank" rel="noopener">/monitor by Firecrawl</a>
+      </h3>
+      <p class="summary">Notify your AI agent when the web changes Discussion | Link</p>
+    </article>
+
+    <article class="card" data-score="0.4478" data-url="https://www.producthunt.com/products/artisan-3">
+      <div class="card-meta">
+        <span class="source">Product Hunt Daily</span>
+        <span class="pubdate">May 27, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:44px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="44% relevance"></span> 44%</span>
+        
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/artisan-3&quot;, &quot;title&quot;: &quot;Ava 2.0&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4478, &quot;summary&quot;: &quot;Your AI BDR that runs outbound sales autonomously Discussion | Link&quot;, &quot;published&quot;: &quot;May 27, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.producthunt.com/products/artisan-3" target="_blank" rel="noopener">Ava 2.0</a>
+      </h3>
+      <p class="summary">Your AI BDR that runs outbound sales autonomously Discussion | Link</p>
+    </article>
+
+    <article class="card" data-score="0.4914" data-url="https://www.producthunt.com/products/ahrefs">
+      <div class="card-meta">
+        <span class="source">Product Hunt Daily</span>
+        <span class="pubdate">May 28, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:49px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="49% relevance"></span> 49%</span>
+        
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/ahrefs&quot;, &quot;title&quot;: &quot;Agent A by Ahrefs&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4914, &quot;summary&quot;: &quot;The AI Marketing Agent Powered by Ahrefs Data Discussion | Link&quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.producthunt.com/products/ahrefs" target="_blank" rel="noopener">Agent A by Ahrefs</a>
+      </h3>
+      <p class="summary">The AI Marketing Agent Powered by Ahrefs Data Discussion | Link</p>
+    </article>
+
     <article class="card" data-score="0.4105" data-url="https://www.technologyreview.com/2026/05/28/1138053/the-ai-hype-index-ai-gets-booed-in-graduation-season/">
       <div class="card-meta">
         <span class="source">MIT Technology Review - AI</span>
         <span class="pubdate">May 28, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:41px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="41% relevance"></span> 41%</span>
-        
+        <span class="badge included">In digest</span>
         <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/05/28/1138053/the-ai-hype-index-ai-gets-booed-in-graduation-season/&quot;, &quot;title&quot;: &quot;The AI Hype Index: AI gets booed in graduation season&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.4105, &quot;summary&quot;: &quot;It is one thing to say AI will change the world. It is another to expect the class of 2026 to applaud it. In fact, when former Google CEO Eric Schmidt told University of Arizona graduates that their task is to help shape AI, he was met with a resounding chorus of boos. “I can&amp;#8230;&quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
         <a href="https://www.technologyreview.com/2026/05/28/1138053/the-ai-hype-index-ai-gets-booed-in-graduation-season/" target="_blank" rel="noopener">The AI Hype Index: AI gets booed in graduation season</a>
       </h3>
       <p class="summary">It is one thing to say AI will change the world. It is another to expect the class of 2026 to applaud it. In fact, when former Google CEO Eric Schmidt told University of Arizona graduates that their task is to help shape AI, he was met with a resounding chorus of boos. “I can&#8230;</p>
+    </article>
+
+    <article class="card" data-score="0.414" data-url="https://openai.com/index/mufg">
+      <div class="card-meta">
+        <span class="source">OpenAI Blog</span>
+        <span class="pubdate">May 28, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:41px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="41% relevance"></span> 41%</span>
+        <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://openai.com/index/mufg&quot;, &quot;title&quot;: &quot;MUFG aims to become AI-native with OpenAI&quot;, &quot;source&quot;: &quot;OpenAI Blog&quot;, &quot;score&quot;: 0.414, &quot;summary&quot;: &quot;MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.&quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://openai.com/index/mufg" target="_blank" rel="noopener">MUFG aims to become AI-native with OpenAI</a>
+      </h3>
+      <p class="summary">MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale.</p>
     </article>
 
     <article class="card" data-score="0.4403" data-url="https://www.technologyreview.com/2026/05/27/1138048/the-download-ai-future-ivf-technology/">
@@ -197,32 +259,46 @@
       <p class="summary">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. Stay on top of what’s going on in AI this summer Here at MIT Technology Review, we understand exactly how relentless the pace of news from the world o…</p>
     </article>
 
-    <article class="card" data-score="0.4482" data-url="https://www.atlassian.com/blog/customer-service-management/ai-first-customer-support-transformation-lessons">
+    <article class="card" data-score="0.4569" data-url="https://www.producttalk.org/building-lorikeet-how-ai-humility-and-a-dual-agent-architecture-are-redefining-customer-support/">
       <div class="card-meta">
-        <span class="source">Atlassian Blog</span>
-        <span class="pubdate">May 26, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:44px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="44% relevance"></span> 44%</span>
+        <span class="source">Product Talk</span>
+        <span class="pubdate">May 28, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:45px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="45% relevance"></span> 45%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.atlassian.com/blog/customer-service-management/ai-first-customer-support-transformation-lessons&quot;, &quot;title&quot;: &quot;From cost center to growth engine: 5 lessons from Leadership Circle’s AI-first support transformation&quot;, &quot;source&quot;: &quot;Atlassian Blog&quot;, &quot;score&quot;: 0.4482, &quot;summary&quot;: &quot;Leadership Circle implemented AI-first customer support to serve 3 million customers across 17 languages — achieving a 71% AI resolution rate, 65% fewer manual tickets, and a support function that now drives revenue. Here are 5 lessons from their transformation. The post From cost center to growth e&quot;, &quot;published&quot;: &quot;May 26, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producttalk.org/building-lorikeet-how-ai-humility-and-a-dual-agent-architecture-are-redefining-customer-support/&quot;, &quot;title&quot;: &quot;Building Lorikeet: How AI Humility and a Dual-Agent Architecture Are Redefining Customer Support&quot;, &quot;source&quot;: &quot;Product Talk&quot;, &quot;score&quot;: 0.4569, &quot;summary&quot;: &quot;Listen to this episode on: Spotify | Apple Podcasts What does it take to build an AI customer support agent that actually knows when it can&amp;apos;t help &amp;#x2014; and says so? In this episode of Just Now Possible , Teresa Torres talks with Jamie Hall (Co-founder &amp;amp; CTO), Xharmagne Carandang&quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.atlassian.com/blog/customer-service-management/ai-first-customer-support-transformation-lessons" target="_blank" rel="noopener">From cost center to growth engine: 5 lessons from Leadership Circle’s AI-first support transformation</a>
+        <a href="https://www.producttalk.org/building-lorikeet-how-ai-humility-and-a-dual-agent-architecture-are-redefining-customer-support/" target="_blank" rel="noopener">Building Lorikeet: How AI Humility and a Dual-Agent Architecture Are Redefining Customer Support</a>
       </h3>
-      <p class="summary">Leadership Circle implemented AI-first customer support to serve 3 million customers across 17 languages — achieving a 71% AI resolution rate, 65% fewer manual tickets, and a support function that now drives revenue. Here are 5 lessons from their transformation. The post From cost center to growth e…</p>
+      <p class="summary">Listen to this episode on: Spotify | Apple Podcasts What does it take to build an AI customer support agent that actually knows when it can&apos;t help &#x2014; and says so? In this episode of Just Now Possible , Teresa Torres talks with Jamie Hall (Co-founder &amp; CTO), Xharmagne Carandang</p>
     </article>
 
-    <article class="card" data-score="0.4712" data-url="https://www.technologyreview.com/2026/05/26/1138028/the-download-ai-jobs-data/">
+    <article class="card" data-score="0.4708" data-url="https://towardsdatascience.com/the-infrastructure-behind-making-local-llm-agents-actually-useful/">
       <div class="card-meta">
-        <span class="source">MIT Technology Review - AI</span>
-        <span class="pubdate">May 26, 2026</span>
+        <span class="source">Towards Data Science</span>
+        <span class="pubdate">May 28, 2026</span>
         <span class="score-bar"><span style="display:inline-block;width:47px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="47% relevance"></span> 47%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/05/26/1138028/the-download-ai-jobs-data/&quot;, &quot;title&quot;: &quot;The Download: puncturing the AI jobs panic&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.4712, &quot;summary&quot;: &quot;This is today&amp;#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&amp;#8217;s going on in the world of technology. A reality check on the AI jobs hysteria Despite the growing hysteria over AI’s threat to white-collar jobs, there’s still scant evidence that the tech&quot;, &quot;published&quot;: &quot;May 26, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://towardsdatascience.com/the-infrastructure-behind-making-local-llm-agents-actually-useful/&quot;, &quot;title&quot;: &quot;The Infrastructure Behind Making Local LLM Agents Actually Useful&quot;, &quot;source&quot;: &quot;Towards Data Science&quot;, &quot;score&quot;: 0.4708, &quot;summary&quot;: &quot;Lessons from building a fast, reliable scientific agent with local open-weight models, vLLM, and long-context infrastructure The post The Infrastructure Behind Making Local LLM Agents Actually Useful appeared first on Towards Data Science .&quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.technologyreview.com/2026/05/26/1138028/the-download-ai-jobs-data/" target="_blank" rel="noopener">The Download: puncturing the AI jobs panic</a>
+        <a href="https://towardsdatascience.com/the-infrastructure-behind-making-local-llm-agents-actually-useful/" target="_blank" rel="noopener">The Infrastructure Behind Making Local LLM Agents Actually Useful</a>
       </h3>
-      <p class="summary">This is today&#8217;s edition of The Download, our weekday newsletter that provides a daily dose of what&#8217;s going on in the world of technology. A reality check on the AI jobs hysteria Despite the growing hysteria over AI’s threat to white-collar jobs, there’s still scant evidence that the tech…</p>
+      <p class="summary">Lessons from building a fast, reliable scientific agent with local open-weight models, vLLM, and long-context infrastructure The post The Infrastructure Behind Making Local LLM Agents Actually Useful appeared first on Towards Data Science .</p>
+    </article>
+
+    <article class="card" data-score="0.4717" data-url="https://www.atlassian.com/blog/ai-at-work/atlassian-design-system-building-the-context-engine-for-the-ai-era">
+      <div class="card-meta">
+        <span class="source">Atlassian Blog</span>
+        <span class="pubdate">May 28, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:47px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="47% relevance"></span> 47%</span>
+        <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.atlassian.com/blog/ai-at-work/atlassian-design-system-building-the-context-engine-for-the-ai-era&quot;, &quot;title&quot;: &quot;Atlassian Design System: Building the context engine for the AI era&quot;, &quot;source&quot;: &quot;Atlassian Blog&quot;, &quot;score&quot;: 0.4717, &quot;summary&quot;: &quot;Design systems are no longer ‘just’ about consistent UI and component libraries. They’re strategic capabilities that harness design intent, drive coherence and accelerate a team&#x27;s ability to innovate. Here&#x27;s how the Atlassian Design System (ADS) is evolving to be a full stack context engine to meet &quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.atlassian.com/blog/ai-at-work/atlassian-design-system-building-the-context-engine-for-the-ai-era" target="_blank" rel="noopener">Atlassian Design System: Building the context engine for the AI era</a>
+      </h3>
+      <p class="summary">Design systems are no longer ‘just’ about consistent UI and component libraries. They’re strategic capabilities that harness design intent, drive coherence and accelerate a team's ability to innovate. Here's how the Atlassian Design System (ADS) is evolving to be a full stack context engine to meet …</p>
     </article>
 
     <article class="card" data-score="0.4749" data-url="https://www.atlassian.com/blog/ai-at-work/how-ai-is-changing-developer-workflows">
@@ -253,34 +329,6 @@
       <p class="summary">Good models don't save bad architecture, and most teams learn that the hard way. The post Most AI Agents Fail in Production Because They’re Built Backwards appeared first on Towards Data Science .</p>
     </article>
 
-    <article class="card" data-score="0.4874" data-url="https://www.producthunt.com/products/zero-xyz">
-      <div class="card-meta">
-        <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">May 26, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:48px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="48% relevance"></span> 48%</span>
-        <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/zero-xyz&quot;, &quot;title&quot;: &quot;zero.xyz&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4874, &quot;summary&quot;: &quot;Give your AI agent access to ~8k tools, APIs and services Discussion | Link&quot;, &quot;published&quot;: &quot;May 26, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
-      </div>
-      <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/zero-xyz" target="_blank" rel="noopener">zero.xyz</a>
-      </h3>
-      <p class="summary">Give your AI agent access to ~8k tools, APIs and services Discussion | Link</p>
-    </article>
-
-    <article class="card" data-score="0.4982" data-url="https://www.producthunt.com/products/crew44">
-      <div class="card-meta">
-        <span class="source">Product Hunt Daily</span>
-        <span class="pubdate">May 27, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:49px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="49% relevance"></span> 49%</span>
-        <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/crew44&quot;, &quot;title&quot;: &quot;Crew44&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.4982, &quot;summary&quot;: &quot;Turn coding agents into specialist teams Discussion | Link&quot;, &quot;published&quot;: &quot;May 27, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
-      </div>
-      <h3 class="card-title">
-        <a href="https://www.producthunt.com/products/crew44" target="_blank" rel="noopener">Crew44</a>
-      </h3>
-      <p class="summary">Turn coding agents into specialist teams Discussion | Link</p>
-    </article>
-
     <article class="card" data-score="0.5075" data-url="https://www.producthunt.com/products/compartment">
       <div class="card-meta">
         <span class="source">Product Hunt Daily</span>
@@ -295,46 +343,60 @@
       <p class="summary">Open-source runtime for internal team software Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.5227" data-url="https://theaileverageweekly.com/posts/your-ai-tools-are-only-as-good-as-your-judgment-and-that-s-the-point.html">
+    <article class="card" data-score="0.516" data-url="https://www.producthunt.com/products/promptlayer-2">
       <div class="card-meta">
-        <span class="source">Hacker News (AI tools)</span>
-        <span class="pubdate">May 27, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:52px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="52% relevance"></span> 52%</span>
+        <span class="source">Product Hunt Daily</span>
+        <span class="pubdate">May 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:51px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="51% relevance"></span> 51%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://theaileverageweekly.com/posts/your-ai-tools-are-only-as-good-as-your-judgment-and-that-s-the-point.html&quot;, &quot;title&quot;: &quot;AI tools are only as good as your judgment&quot;, &quot;source&quot;: &quot;Hacker News (AI tools)&quot;, &quot;score&quot;: 0.5227, &quot;summary&quot;: &quot;HN discussion: AI tools are only as good as your judgment. Points: 81, Comments: 22&quot;, &quot;published&quot;: &quot;May 27, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/promptlayer-2&quot;, &quot;title&quot;: &quot;PromptLayer&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.516, &quot;summary&quot;: &quot;Trace AI requests, workflows, and costs in one timeline Discussion | Link&quot;, &quot;published&quot;: &quot;May 29, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://theaileverageweekly.com/posts/your-ai-tools-are-only-as-good-as-your-judgment-and-that-s-the-point.html" target="_blank" rel="noopener">AI tools are only as good as your judgment</a>
+        <a href="https://www.producthunt.com/products/promptlayer-2" target="_blank" rel="noopener">PromptLayer</a>
       </h3>
-      <p class="summary">HN discussion: AI tools are only as good as your judgment. Points: 81, Comments: 22</p>
+      <p class="summary">Trace AI requests, workflows, and costs in one timeline Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.5266" data-url="https://towardsdatascience.com/stop-using-llms-like-giant-problem-solvers/">
+    <article class="card" data-score="0.548" data-url="https://www.producthunt.com/products/basedash">
       <div class="card-meta">
-        <span class="source">Towards Data Science</span>
-        <span class="pubdate">May 26, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:52px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="52% relevance"></span> 52%</span>
+        <span class="source">Product Hunt Daily</span>
+        <span class="pubdate">May 28, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:54px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="54% relevance"></span> 54%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://towardsdatascience.com/stop-using-llms-like-giant-problem-solvers/&quot;, &quot;title&quot;: &quot;Stop Using LLMs Like Giant Problem Solvers&quot;, &quot;source&quot;: &quot;Towards Data Science&quot;, &quot;score&quot;: 0.5266, &quot;summary&quot;: &quot;How I turned 100 messy pdfs into structured insights by building a deterministic loop around agents The post Stop Using LLMs Like Giant Problem Solvers appeared first on Towards Data Science .&quot;, &quot;published&quot;: &quot;May 26, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.producthunt.com/products/basedash&quot;, &quot;title&quot;: &quot;Basedash: Embedded Analytics&quot;, &quot;source&quot;: &quot;Product Hunt Daily&quot;, &quot;score&quot;: 0.548, &quot;summary&quot;: &quot;Give customers AI analytics inside your product. Discussion | Link&quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://towardsdatascience.com/stop-using-llms-like-giant-problem-solvers/" target="_blank" rel="noopener">Stop Using LLMs Like Giant Problem Solvers</a>
+        <a href="https://www.producthunt.com/products/basedash" target="_blank" rel="noopener">Basedash: Embedded Analytics</a>
       </h3>
-      <p class="summary">How I turned 100 messy pdfs into structured insights by building a deterministic loop around agents The post Stop Using LLMs Like Giant Problem Solvers appeared first on Towards Data Science .</p>
+      <p class="summary">Give customers AI analytics inside your product. Discussion | Link</p>
     </article>
 
-    <article class="card" data-score="0.5389" data-url="https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/">
+    <article class="card" data-score="0.5625" data-url="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut">
       <div class="card-meta">
-        <span class="source">MIT Technology Review - AI</span>
-        <span class="pubdate">May 26, 2026</span>
-        <span class="score-bar"><span style="display:inline-block;width:53px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="53% relevance"></span> 53%</span>
+        <span class="source">The Pragmatic Engineer</span>
+        <span class="pubdate">May 28, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:56px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="56% relevance"></span> 56%</span>
         <span class="badge included">In digest</span>
-        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/&quot;, &quot;title&quot;: &quot;Rethinking organizational design in the age of agentic AI&quot;, &quot;source&quot;: &quot;MIT Technology Review - AI&quot;, &quot;score&quot;: 0.5389, &quot;summary&quot;: &quot;Amid rapidly growing adoption of enterprise-level AI agents, there’s a disconnect emerging between ambition and execution.&amp;#160; Although 85% of organizations say they want to be agentic within the next three years, 76% say their current operations and infrastructure can’t support that change. They &quot;, &quot;published&quot;: &quot;May 26, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut&quot;, &quot;title&quot;: &quot;The Pulse: a trend of trying to cut back on AI spend within eng departments?&quot;, &quot;source&quot;: &quot;The Pragmatic Engineer&quot;, &quot;score&quot;: 0.5625, &quot;summary&quot;: &quot;Top-down and bottom-up efforts to rationalize AI token spend, interesting AI coding stats from Cursor, GCP suspends $2M/month customer without warning, and more&quot;, &quot;published&quot;: &quot;May 28, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
       </div>
       <h3 class="card-title">
-        <a href="https://www.technologyreview.com/2026/05/26/1137584/rethinking-organizational-design-in-the-age-of-agentic-ai/" target="_blank" rel="noopener">Rethinking organizational design in the age of agentic AI</a>
+        <a href="https://newsletter.pragmaticengineer.com/p/the-pulse-a-trend-of-trying-to-cut" target="_blank" rel="noopener">The Pulse: a trend of trying to cut back on AI spend within eng departments?</a>
       </h3>
-      <p class="summary">Amid rapidly growing adoption of enterprise-level AI agents, there’s a disconnect emerging between ambition and execution.&#160; Although 85% of organizations say they want to be agentic within the next three years, 76% say their current operations and infrastructure can’t support that change. They …</p>
+      <p class="summary">Top-down and bottom-up efforts to rationalize AI token spend, interesting AI coding stats from Cursor, GCP suspends $2M/month customer without warning, and more</p>
+    </article>
+
+    <article class="card" data-score="0.5671" data-url="https://www.atlassian.com/blog/how-we-build/the-future-of-product-craft">
+      <div class="card-meta">
+        <span class="source">Atlassian Blog</span>
+        <span class="pubdate">May 29, 2026</span>
+        <span class="score-bar"><span style="display:inline-block;width:56px;height:8px;background:#f39c12;border-radius:3px;vertical-align:middle" title="56% relevance"></span> 56%</span>
+        <span class="badge included">In digest</span>
+        <button class="save-btn" data-article="{&quot;url&quot;: &quot;https://www.atlassian.com/blog/how-we-build/the-future-of-product-craft&quot;, &quot;title&quot;: &quot;The future of product craft: Why AI-native PMs build better products, not just work faster&quot;, &quot;source&quot;: &quot;Atlassian Blog&quot;, &quot;score&quot;: 0.5671, &quot;summary&quot;: &quot;AI use is accelerating across the modern enterprise. Teams are moving faster. The barrier to building will continue to drop. But the cost of building the wrong thing is about to skyrocket, because teams can now ship more of it, faster. Atlassian&amp;#8217;s State of Teams 2026 report found that 89% of e&quot;, &quot;published&quot;: &quot;May 29, 2026&quot;}" onclick="toggleSave(this)" title="Save article">&#9733;</button>
+      </div>
+      <h3 class="card-title">
+        <a href="https://www.atlassian.com/blog/how-we-build/the-future-of-product-craft" target="_blank" rel="noopener">The future of product craft: Why AI-native PMs build better products, not just work faster</a>
+      </h3>
+      <p class="summary">AI use is accelerating across the modern enterprise. Teams are moving faster. The barrier to building will continue to drop. But the cost of building the wrong thing is about to skyrocket, because teams can now ship more of it, faster. Atlassian&#8217;s State of Teams 2026 report found that 89% of e…</p>
     </article>
 
     <article class="card" data-score="0.4024" data-url="https://www.technologyreview.com/2026/03/31/1134833/ai-benchmarks-are-broken-heres-what-we-need-instead/">
